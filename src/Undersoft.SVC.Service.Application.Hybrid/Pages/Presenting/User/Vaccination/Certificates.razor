@@ -1,0 +1,12 @@
+﻿@using Microsoft.AspNetCore.Authorization
+@using Undersoft.SVC.Service.Application.GUI.Compound.Presenting.Base.User.Vaccination
+
+@inherits CertificatesBase
+
+@attribute [Authorize]
+
+@page "/presenting/user/vaccination/certificates"
+
+@{
+    base.BuildRenderTree(__builder);
+}
