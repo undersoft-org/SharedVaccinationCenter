@@ -12,7 +12,7 @@ using Undersoft.SVC.Service.Infrastructure.Stores;
 namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Events
 {
     [DbContext(typeof(EventStore))]
-    [Migration("20240904113532_InitialCreate")]
+    [Migration("20240928020206_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -21,9 +21,6 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Events
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "8.0.8")
-                .HasAnnotation("Proxies:ChangeTracking", false)
-                .HasAnnotation("Proxies:CheckEquality", false)
-                .HasAnnotation("Proxies:LazyLoading", true)
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -42,12 +39,12 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Events
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(8);
+                        .HasColumnOrder(7);
 
                     b.Property<string>("Creator")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(9);
+                        .HasColumnOrder(8);
 
                     b.Property<byte[]>("Data")
                         .HasColumnType("bytea");
@@ -64,33 +61,33 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Events
                     b.Property<int>("Index")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
-                        .HasColumnOrder(10);
+                        .HasColumnOrder(9);
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Index"));
 
                     b.Property<string>("Label")
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)")
-                        .HasColumnOrder(11);
+                        .HasColumnOrder(10);
 
                     b.Property<DateTime>("Modified")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(6);
+                        .HasColumnOrder(5);
 
                     b.Property<string>("Modifier")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(7);
-
-                    b.Property<long>("OriginId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
+                        .HasColumnOrder(6);
 
                     b.Property<int>("PublishStatus")
                         .HasColumnType("integer");
 
                     b.Property<DateTime>("PublishTime")
                         .HasColumnType("timestamp");
+
+                    b.Property<long>("TenantId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
 
                     b.Property<long>("TypeId")
                         .HasColumnType("bigint")
@@ -99,7 +96,7 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Events
                     b.Property<string>("TypeName")
                         .HasMaxLength(768)
                         .HasColumnType("character varying(768)")
-                        .HasColumnOrder(5);
+                        .HasColumnOrder(4);
 
                     b.Property<long>("Version")
                         .HasColumnType("bigint");

@@ -12,7 +12,7 @@ using Undersoft.SVC.Service.Infrastructure.Stores;
 namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
 {
     [DbContext(typeof(EntryStore))]
-    [Migration("20240904113437_InitialCreate")]
+    [Migration("20240928020036_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -21,9 +21,6 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "8.0.8")
-                .HasAnnotation("Proxies:ChangeTracking", false)
-                .HasAnnotation("Proxies:CheckEquality", false)
-                .HasAnnotation("Proxies:LazyLoading", true)
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -42,43 +39,43 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(8);
+                        .HasColumnOrder(7);
 
                     b.Property<string>("Creator")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(9);
+                        .HasColumnOrder(8);
 
                     b.Property<int>("Index")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
-                        .HasColumnOrder(10);
+                        .HasColumnOrder(9);
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Index"));
 
                     b.Property<string>("Label")
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)")
-                        .HasColumnOrder(11);
+                        .HasColumnOrder(10);
 
                     b.Property<long?>("LeftEntityId")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime>("Modified")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(6);
+                        .HasColumnOrder(5);
 
                     b.Property<string>("Modifier")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(7);
-
-                    b.Property<long>("OriginId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
+                        .HasColumnOrder(6);
 
                     b.Property<long?>("RightEntityId")
                         .HasColumnType("bigint");
+
+                    b.Property<long>("TenantId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
 
                     b.Property<long>("TypeId")
                         .HasColumnType("bigint")
@@ -87,7 +84,7 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
                     b.Property<string>("TypeName")
                         .HasMaxLength(768)
                         .HasColumnType("character varying(768)")
-                        .HasColumnOrder(5);
+                        .HasColumnOrder(4);
 
                     b.HasKey("Id");
 
@@ -127,45 +124,41 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(8);
+                        .HasColumnOrder(7);
 
                     b.Property<string>("Creator")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(9);
+                        .HasColumnOrder(8);
 
                     b.Property<int>("Index")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
-                        .HasColumnOrder(10);
+                        .HasColumnOrder(9);
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Index"));
 
                     b.Property<string>("Label")
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)")
-                        .HasColumnOrder(11);
+                        .HasColumnOrder(10);
 
                     b.Property<DateTime>("Modified")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(6);
+                        .HasColumnOrder(5);
 
                     b.Property<string>("Modifier")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(7);
+                        .HasColumnOrder(6);
 
                     b.Property<string>("Notes")
                         .HasColumnType("text");
 
-                    b.Property<long>("OriginId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
-
                     b.Property<string>("Postcode")
                         .HasColumnType("text");
 
-                    b.Property<string>("GetState")
+                    b.Property<string>("State")
                         .HasColumnType("text");
 
                     b.Property<string>("Street")
@@ -174,6 +167,10 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
                     b.Property<long?>("SupplierId")
                         .HasColumnType("bigint");
 
+                    b.Property<long>("TenantId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
+
                     b.Property<long>("TypeId")
                         .HasColumnType("bigint")
                         .HasColumnOrder(2);
@@ -181,7 +178,7 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
                     b.Property<string>("TypeName")
                         .HasMaxLength(768)
                         .HasColumnType("character varying(768)")
-                        .HasColumnOrder(5);
+                        .HasColumnOrder(4);
 
                     b.HasKey("Id");
 
@@ -207,43 +204,43 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(8);
+                        .HasColumnOrder(7);
 
                     b.Property<string>("Creator")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(9);
+                        .HasColumnOrder(8);
 
                     b.Property<int>("Index")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
-                        .HasColumnOrder(10);
+                        .HasColumnOrder(9);
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Index"));
 
                     b.Property<string>("Label")
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)")
-                        .HasColumnOrder(11);
+                        .HasColumnOrder(10);
 
                     b.Property<DateTime>("Modified")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(6);
+                        .HasColumnOrder(5);
 
                     b.Property<string>("Modifier")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(7);
+                        .HasColumnOrder(6);
 
                     b.Property<string>("Name")
                         .HasColumnType("text");
 
-                    b.Property<long>("OriginId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
-
                     b.Property<long?>("PriceId")
                         .HasColumnType("bigint");
+
+                    b.Property<long>("TenantId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
 
                     b.Property<long>("TypeId")
                         .HasColumnType("bigint")
@@ -252,7 +249,7 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
                     b.Property<string>("TypeName")
                         .HasMaxLength(768)
                         .HasColumnType("character varying(768)")
-                        .HasColumnOrder(5);
+                        .HasColumnOrder(4);
 
                     b.HasKey("Id");
 
@@ -275,12 +272,12 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(8);
+                        .HasColumnOrder(7);
 
                     b.Property<string>("Creator")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(9);
+                        .HasColumnOrder(8);
 
                     b.Property<string>("FullName")
                         .HasColumnType("text");
@@ -288,14 +285,14 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
                     b.Property<int>("Index")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
-                        .HasColumnOrder(10);
+                        .HasColumnOrder(9);
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Index"));
 
                     b.Property<string>("Label")
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)")
-                        .HasColumnOrder(11);
+                        .HasColumnOrder(10);
 
                     b.Property<string>("ManufacturerImage")
                         .HasColumnType("text");
@@ -305,17 +302,17 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
 
                     b.Property<DateTime>("Modified")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(6);
+                        .HasColumnOrder(5);
 
                     b.Property<string>("Modifier")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(7);
+                        .HasColumnOrder(6);
 
                     b.Property<string>("Name")
                         .HasColumnType("text");
 
-                    b.Property<long>("OriginId")
+                    b.Property<long>("TenantId")
                         .HasColumnType("bigint")
                         .HasColumnOrder(3);
 
@@ -326,7 +323,7 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
                     b.Property<string>("TypeName")
                         .HasMaxLength(768)
                         .HasColumnType("character varying(768)")
-                        .HasColumnOrder(5);
+                        .HasColumnOrder(4);
 
                     b.HasKey("Id");
 
@@ -349,33 +346,33 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(8);
+                        .HasColumnOrder(7);
 
                     b.Property<string>("Creator")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(9);
+                        .HasColumnOrder(8);
 
                     b.Property<int>("Index")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
-                        .HasColumnOrder(10);
+                        .HasColumnOrder(9);
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Index"));
 
                     b.Property<string>("Label")
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)")
-                        .HasColumnOrder(11);
+                        .HasColumnOrder(10);
 
                     b.Property<DateTime>("Modified")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(6);
+                        .HasColumnOrder(5);
 
                     b.Property<string>("Modifier")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(7);
+                        .HasColumnOrder(6);
 
                     b.Property<string>("Name")
                         .HasColumnType("text");
@@ -383,7 +380,7 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
                     b.Property<string>("Number")
                         .HasColumnType("text");
 
-                    b.Property<long>("OriginId")
+                    b.Property<long>("TenantId")
                         .HasColumnType("bigint")
                         .HasColumnOrder(3);
 
@@ -394,7 +391,7 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
                     b.Property<string>("TypeName")
                         .HasMaxLength(768)
                         .HasColumnType("character varying(768)")
-                        .HasColumnOrder(5);
+                        .HasColumnOrder(4);
 
                     b.HasKey("Id");
 
@@ -423,33 +420,33 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(8);
+                        .HasColumnOrder(7);
 
                     b.Property<string>("Creator")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(9);
+                        .HasColumnOrder(8);
 
                     b.Property<int>("Index")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
-                        .HasColumnOrder(10);
+                        .HasColumnOrder(9);
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Index"));
 
                     b.Property<string>("Label")
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)")
-                        .HasColumnOrder(11);
+                        .HasColumnOrder(10);
 
                     b.Property<DateTime>("Modified")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(6);
+                        .HasColumnOrder(5);
 
                     b.Property<string>("Modifier")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(7);
+                        .HasColumnOrder(6);
 
                     b.Property<string>("Notes")
                         .HasColumnType("text");
@@ -457,12 +454,12 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
                     b.Property<long?>("OrganizationId")
                         .HasColumnType("bigint");
 
-                    b.Property<long>("OriginId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
-
                     b.Property<long?>("ProfessionalId")
                         .HasColumnType("bigint");
+
+                    b.Property<long>("TenantId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
 
                     b.Property<long>("TypeId")
                         .HasColumnType("bigint")
@@ -471,7 +468,7 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
                     b.Property<string>("TypeName")
                         .HasMaxLength(768)
                         .HasColumnType("character varying(768)")
-                        .HasColumnOrder(5);
+                        .HasColumnOrder(4);
 
                     b.HasKey("Id");
 
@@ -494,43 +491,39 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(8);
+                        .HasColumnOrder(7);
 
                     b.Property<string>("Creator")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(9);
+                        .HasColumnOrder(8);
 
                     b.Property<int>("Index")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
-                        .HasColumnOrder(10);
+                        .HasColumnOrder(9);
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Index"));
 
                     b.Property<string>("Label")
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)")
-                        .HasColumnOrder(11);
+                        .HasColumnOrder(10);
 
                     b.Property<long?>("ManufacturerId")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime>("Modified")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(6);
+                        .HasColumnOrder(5);
 
                     b.Property<string>("Modifier")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(7);
+                        .HasColumnOrder(6);
 
                     b.Property<string>("Notes")
                         .HasColumnType("text");
-
-                    b.Property<long>("OriginId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
 
                     b.Property<long?>("SafetyId")
                         .HasColumnType("bigint");
@@ -541,6 +534,10 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
                     b.Property<long?>("StockId")
                         .HasColumnType("bigint");
 
+                    b.Property<long>("TenantId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
+
                     b.Property<long>("TypeId")
                         .HasColumnType("bigint")
                         .HasColumnOrder(2);
@@ -548,7 +545,7 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
                     b.Property<string>("TypeName")
                         .HasMaxLength(768)
                         .HasColumnType("character varying(768)")
-                        .HasColumnOrder(5);
+                        .HasColumnOrder(4);
 
                     b.HasKey("Id");
 
@@ -582,46 +579,46 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(8);
+                        .HasColumnOrder(7);
 
                     b.Property<string>("Creator")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(9);
+                        .HasColumnOrder(8);
 
                     b.Property<int>("Index")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
-                        .HasColumnOrder(10);
+                        .HasColumnOrder(9);
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Index"));
 
                     b.Property<string>("Label")
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)")
-                        .HasColumnOrder(11);
+                        .HasColumnOrder(10);
 
                     b.Property<DateTime>("Modified")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(6);
+                        .HasColumnOrder(5);
 
                     b.Property<string>("Modifier")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(7);
+                        .HasColumnOrder(6);
 
                     b.Property<string>("Name")
                         .HasColumnType("text");
-
-                    b.Property<long>("OriginId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
 
                     b.Property<long?>("ProcedureId")
                         .HasColumnType("bigint");
 
                     b.Property<double?>("Tax")
                         .HasColumnType("double precision");
+
+                    b.Property<long>("TenantId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
 
                     b.Property<long?>("TrafficId")
                         .HasColumnType("bigint");
@@ -633,7 +630,7 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
                     b.Property<string>("TypeName")
                         .HasMaxLength(768)
                         .HasColumnType("character varying(768)")
-                        .HasColumnOrder(5);
+                        .HasColumnOrder(4);
 
                     b.Property<double?>("Value")
                         .HasColumnType("double precision");
@@ -659,46 +656,46 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(8);
+                        .HasColumnOrder(7);
 
                     b.Property<string>("Creator")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(9);
+                        .HasColumnOrder(8);
 
                     b.Property<int>("Index")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
-                        .HasColumnOrder(10);
+                        .HasColumnOrder(9);
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Index"));
 
                     b.Property<string>("Label")
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)")
-                        .HasColumnOrder(11);
+                        .HasColumnOrder(10);
 
                     b.Property<DateTime>("Modified")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(6);
+                        .HasColumnOrder(5);
 
                     b.Property<string>("Modifier")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(7);
+                        .HasColumnOrder(6);
 
                     b.Property<string>("Notes")
                         .HasColumnType("text");
-
-                    b.Property<long>("OriginId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
 
                     b.Property<float?>("Quentity")
                         .HasColumnType("real");
 
                     b.Property<long?>("StockId")
                         .HasColumnType("bigint");
+
+                    b.Property<long>("TenantId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
 
                     b.Property<long>("TypeId")
                         .HasColumnType("bigint")
@@ -707,7 +704,7 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
                     b.Property<string>("TypeName")
                         .HasMaxLength(768)
                         .HasColumnType("character varying(768)")
-                        .HasColumnOrder(5);
+                        .HasColumnOrder(4);
 
                     b.HasKey("Id");
 
@@ -735,38 +732,38 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(8);
+                        .HasColumnOrder(7);
 
                     b.Property<string>("Creator")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(9);
+                        .HasColumnOrder(8);
 
                     b.Property<int>("Index")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
-                        .HasColumnOrder(10);
+                        .HasColumnOrder(9);
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Index"));
 
                     b.Property<string>("Label")
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)")
-                        .HasColumnOrder(11);
+                        .HasColumnOrder(10);
 
                     b.Property<DateTime>("Modified")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(6);
+                        .HasColumnOrder(5);
 
                     b.Property<string>("Modifier")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(7);
+                        .HasColumnOrder(6);
 
                     b.Property<string>("Notes")
                         .HasColumnType("text");
 
-                    b.Property<long>("OriginId")
+                    b.Property<long>("TenantId")
                         .HasColumnType("bigint")
                         .HasColumnOrder(3);
 
@@ -777,7 +774,7 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
                     b.Property<string>("TypeName")
                         .HasMaxLength(768)
                         .HasColumnType("character varying(768)")
-                        .HasColumnOrder(5);
+                        .HasColumnOrder(4);
 
                     b.Property<long?>("VaccineId")
                         .HasColumnType("bigint");
@@ -809,40 +806,36 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(8);
+                        .HasColumnOrder(7);
 
                     b.Property<string>("Creator")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(9);
+                        .HasColumnOrder(8);
 
                     b.Property<int>("Index")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
-                        .HasColumnOrder(10);
+                        .HasColumnOrder(9);
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Index"));
 
                     b.Property<string>("Label")
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)")
-                        .HasColumnOrder(11);
+                        .HasColumnOrder(10);
 
                     b.Property<DateTime>("Modified")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(6);
+                        .HasColumnOrder(5);
 
                     b.Property<string>("Modifier")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(7);
+                        .HasColumnOrder(6);
 
                     b.Property<string>("Notes")
                         .HasColumnType("text");
-
-                    b.Property<long>("OriginId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
 
                     b.Property<long?>("PriceId")
                         .HasColumnType("bigint");
@@ -852,6 +845,10 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
 
                     b.Property<long?>("StockId")
                         .HasColumnType("bigint");
+
+                    b.Property<long>("TenantId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
 
                     b.Property<int>("Type")
                         .HasColumnType("integer");
@@ -863,7 +860,7 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
                     b.Property<string>("TypeName")
                         .HasMaxLength(768)
                         .HasColumnType("character varying(768)")
-                        .HasColumnOrder(5);
+                        .HasColumnOrder(4);
 
                     b.HasKey("Id");
 
@@ -894,33 +891,33 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(8);
+                        .HasColumnOrder(7);
 
                     b.Property<string>("Creator")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(9);
+                        .HasColumnOrder(8);
 
                     b.Property<int>("Index")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
-                        .HasColumnOrder(10);
+                        .HasColumnOrder(9);
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Index"));
 
                     b.Property<string>("Label")
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)")
-                        .HasColumnOrder(11);
+                        .HasColumnOrder(10);
 
                     b.Property<DateTime>("Modified")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(6);
+                        .HasColumnOrder(5);
 
                     b.Property<string>("Modifier")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(7);
+                        .HasColumnOrder(6);
 
                     b.Property<string>("OrganizationFullName")
                         .HasColumnType("text");
@@ -949,15 +946,15 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
                     b.Property<string>("OrganizationWebsites")
                         .HasColumnType("text");
 
-                    b.Property<long>("OriginId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
-
                     b.Property<string>("PositionInOrganization")
                         .HasColumnType("text");
 
                     b.Property<long?>("SupplierId")
                         .HasColumnType("bigint");
+
+                    b.Property<long>("TenantId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
 
                     b.Property<long>("TypeId")
                         .HasColumnType("bigint")
@@ -966,7 +963,7 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
                     b.Property<string>("TypeName")
                         .HasMaxLength(768)
                         .HasColumnType("character varying(768)")
-                        .HasColumnOrder(5);
+                        .HasColumnOrder(4);
 
                     b.HasKey("Id");
 
@@ -998,43 +995,43 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(8);
+                        .HasColumnOrder(7);
 
                     b.Property<string>("Creator")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(9);
+                        .HasColumnOrder(8);
 
                     b.Property<int>("Index")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
-                        .HasColumnOrder(10);
+                        .HasColumnOrder(9);
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Index"));
 
                     b.Property<string>("Label")
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)")
-                        .HasColumnOrder(11);
+                        .HasColumnOrder(10);
 
                     b.Property<DateTime>("Modified")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(6);
+                        .HasColumnOrder(5);
 
                     b.Property<string>("Modifier")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(7);
+                        .HasColumnOrder(6);
 
                     b.Property<string>("Name")
                         .HasColumnType("text");
 
-                    b.Property<long>("OriginId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
-
                     b.Property<double?>("Tax")
                         .HasColumnType("double precision");
+
+                    b.Property<long>("TenantId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
 
                     b.Property<long>("TypeId")
                         .HasColumnType("bigint")
@@ -1043,7 +1040,7 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
                     b.Property<string>("TypeName")
                         .HasMaxLength(768)
                         .HasColumnType("character varying(768)")
-                        .HasColumnOrder(5);
+                        .HasColumnOrder(4);
 
                     b.Property<double?>("Value")
                         .HasColumnType("double precision");
@@ -1078,12 +1075,12 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(8);
+                        .HasColumnOrder(7);
 
                     b.Property<string>("Creator")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(9);
+                        .HasColumnOrder(8);
 
                     b.Property<string>("Email")
                         .HasColumnType("text");
@@ -1109,30 +1106,26 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
                     b.Property<int>("Index")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
-                        .HasColumnOrder(10);
+                        .HasColumnOrder(9);
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Index"));
 
                     b.Property<string>("Label")
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)")
-                        .HasColumnOrder(11);
+                        .HasColumnOrder(10);
 
                     b.Property<string>("LastName")
                         .HasColumnType("text");
 
                     b.Property<DateTime>("Modified")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(6);
+                        .HasColumnOrder(5);
 
                     b.Property<string>("Modifier")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(7);
-
-                    b.Property<long>("OriginId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
+                        .HasColumnOrder(6);
 
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("text");
@@ -1146,6 +1139,10 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
                     b.Property<string>("SocialMedia")
                         .HasColumnType("text");
 
+                    b.Property<long>("TenantId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
+
                     b.Property<string>("Title")
                         .HasColumnType("text");
 
@@ -1156,7 +1153,7 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
                     b.Property<string>("TypeName")
                         .HasMaxLength(768)
                         .HasColumnType("character varying(768)")
-                        .HasColumnOrder(5);
+                        .HasColumnOrder(4);
 
                     b.Property<string>("Websites")
                         .HasColumnType("text");
@@ -1188,46 +1185,46 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(8);
+                        .HasColumnOrder(7);
 
                     b.Property<string>("Creator")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(9);
+                        .HasColumnOrder(8);
 
                     b.Property<int>("Index")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
-                        .HasColumnOrder(10);
+                        .HasColumnOrder(9);
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Index"));
 
                     b.Property<string>("Label")
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)")
-                        .HasColumnOrder(11);
+                        .HasColumnOrder(10);
 
                     b.Property<DateTime>("Modified")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(6);
+                        .HasColumnOrder(5);
 
                     b.Property<string>("Modifier")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(7);
+                        .HasColumnOrder(6);
 
                     b.Property<string>("Name")
                         .HasColumnType("text");
-
-                    b.Property<long>("OriginId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
 
                     b.Property<long?>("ProcedureId")
                         .HasColumnType("bigint");
 
                     b.Property<double?>("Tax")
                         .HasColumnType("double precision");
+
+                    b.Property<long>("TenantId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
 
                     b.Property<long?>("TrafficId")
                         .HasColumnType("bigint");
@@ -1239,7 +1236,7 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
                     b.Property<string>("TypeName")
                         .HasMaxLength(768)
                         .HasColumnType("character varying(768)")
-                        .HasColumnOrder(5);
+                        .HasColumnOrder(4);
 
                     b.Property<double?>("Value")
                         .HasColumnType("double precision");
@@ -1268,37 +1265,33 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(8);
+                        .HasColumnOrder(7);
 
                     b.Property<string>("Creator")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(9);
+                        .HasColumnOrder(8);
 
                     b.Property<int>("Index")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
-                        .HasColumnOrder(10);
+                        .HasColumnOrder(9);
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Index"));
 
                     b.Property<string>("Label")
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)")
-                        .HasColumnOrder(11);
+                        .HasColumnOrder(10);
 
                     b.Property<DateTime>("Modified")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(6);
+                        .HasColumnOrder(5);
 
                     b.Property<string>("Modifier")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(7);
-
-                    b.Property<long>("OriginId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
+                        .HasColumnOrder(6);
 
                     b.Property<string>("Profession")
                         .HasColumnType("text");
@@ -1339,6 +1332,10 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
                     b.Property<long?>("SupplierId")
                         .HasColumnType("bigint");
 
+                    b.Property<long>("TenantId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
+
                     b.Property<long>("TypeId")
                         .HasColumnType("bigint")
                         .HasColumnOrder(2);
@@ -1346,7 +1343,7 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
                     b.Property<string>("TypeName")
                         .HasMaxLength(768)
                         .HasColumnType("character varying(768)")
-                        .HasColumnOrder(5);
+                        .HasColumnOrder(4);
 
                     b.HasKey("Id");
 
@@ -1372,12 +1369,12 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(8);
+                        .HasColumnOrder(7);
 
                     b.Property<string>("Creator")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(9);
+                        .HasColumnOrder(8);
 
                     b.Property<string>("Description")
                         .HasColumnType("text");
@@ -1388,30 +1385,30 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
                     b.Property<int>("Index")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
-                        .HasColumnOrder(10);
+                        .HasColumnOrder(9);
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Index"));
 
                     b.Property<string>("Label")
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)")
-                        .HasColumnOrder(11);
+                        .HasColumnOrder(10);
 
                     b.Property<DateTime>("Modified")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(6);
+                        .HasColumnOrder(5);
 
                     b.Property<string>("Modifier")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(7);
-
-                    b.Property<long>("OriginId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
+                        .HasColumnOrder(6);
 
                     b.Property<float?>("Temperature")
                         .HasColumnType("real");
+
+                    b.Property<long>("TenantId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
 
                     b.Property<long>("TypeId")
                         .HasColumnType("bigint")
@@ -1420,7 +1417,7 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
                     b.Property<string>("TypeName")
                         .HasMaxLength(768)
                         .HasColumnType("character varying(768)")
-                        .HasColumnOrder(5);
+                        .HasColumnOrder(4);
 
                     b.Property<long?>("VaccineId")
                         .HasColumnType("bigint");
@@ -1449,12 +1446,12 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(8);
+                        .HasColumnOrder(7);
 
                     b.Property<string>("Creator")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(9);
+                        .HasColumnOrder(8);
 
                     b.Property<DateTime?>("EndDate")
                         .HasColumnType("timestamp without time zone");
@@ -1465,7 +1462,7 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
                     b.Property<int>("Index")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
-                        .HasColumnOrder(10);
+                        .HasColumnOrder(9);
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Index"));
 
@@ -1475,29 +1472,29 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
                     b.Property<string>("Label")
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)")
-                        .HasColumnOrder(11);
+                        .HasColumnOrder(10);
 
                     b.Property<DateTime>("Modified")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(6);
+                        .HasColumnOrder(5);
 
                     b.Property<string>("Modifier")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(7);
+                        .HasColumnOrder(6);
 
                     b.Property<string>("Notes")
                         .HasColumnType("text");
-
-                    b.Property<long>("OriginId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
 
                     b.Property<DateTime?>("StartDate")
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<TimeOnly?>("StartTime")
                         .HasColumnType("time without time zone");
+
+                    b.Property<long>("TenantId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
 
                     b.Property<int>("Type")
                         .HasColumnType("integer");
@@ -1509,7 +1506,7 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
                     b.Property<string>("TypeName")
                         .HasMaxLength(768)
                         .HasColumnType("character varying(768)")
-                        .HasColumnOrder(5);
+                        .HasColumnOrder(4);
 
                     b.HasKey("Id");
 
@@ -1532,12 +1529,12 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(8);
+                        .HasColumnOrder(7);
 
                     b.Property<string>("Creator")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(9);
+                        .HasColumnOrder(8);
 
                     b.Property<string>("Description")
                         .HasColumnType("text");
@@ -1548,23 +1545,23 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
                     b.Property<int>("Index")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
-                        .HasColumnOrder(10);
+                        .HasColumnOrder(9);
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Index"));
 
                     b.Property<string>("Label")
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)")
-                        .HasColumnOrder(11);
+                        .HasColumnOrder(10);
 
                     b.Property<DateTime>("Modified")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(6);
+                        .HasColumnOrder(5);
 
                     b.Property<string>("Modifier")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(7);
+                        .HasColumnOrder(6);
 
                     b.Property<string>("Name")
                         .HasColumnType("text");
@@ -1572,7 +1569,7 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
                     b.Property<string>("Notes")
                         .HasColumnType("text");
 
-                    b.Property<long>("OriginId")
+                    b.Property<long>("TenantId")
                         .HasColumnType("bigint")
                         .HasColumnOrder(3);
 
@@ -1583,7 +1580,7 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
                     b.Property<string>("TypeName")
                         .HasMaxLength(768)
                         .HasColumnType("character varying(768)")
-                        .HasColumnOrder(5);
+                        .HasColumnOrder(4);
 
                     b.Property<long?>("VaccineId")
                         .HasColumnType("bigint");
@@ -1621,12 +1618,12 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(8);
+                        .HasColumnOrder(7);
 
                     b.Property<string>("Creator")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(9);
+                        .HasColumnOrder(8);
 
                     b.Property<DateTime?>("Date")
                         .HasColumnType("timestamp without time zone");
@@ -1637,13 +1634,13 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
                     b.Property<string>("Dose")
                         .HasColumnType("text");
 
-                    b.Property<DateTime?>("Expires")
+                    b.Property<DateTime?>("Expiration")
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<int>("Index")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
-                        .HasColumnOrder(10);
+                        .HasColumnOrder(9);
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Index"));
 
@@ -1653,29 +1650,29 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
                     b.Property<string>("Label")
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)")
-                        .HasColumnOrder(11);
+                        .HasColumnOrder(10);
 
                     b.Property<DateTime>("Modified")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(6);
+                        .HasColumnOrder(5);
 
                     b.Property<string>("Modifier")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(7);
+                        .HasColumnOrder(6);
 
                     b.Property<string>("Name")
                         .HasColumnType("text");
-
-                    b.Property<long>("OriginId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
 
                     b.Property<long?>("PostSymptomId")
                         .HasColumnType("bigint");
 
                     b.Property<long?>("ProcedureId")
                         .HasColumnType("bigint");
+
+                    b.Property<long>("TenantId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
 
                     b.Property<long>("TypeId")
                         .HasColumnType("bigint")
@@ -1684,7 +1681,7 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
                     b.Property<string>("TypeName")
                         .HasMaxLength(768)
                         .HasColumnType("character varying(768)")
-                        .HasColumnOrder(5);
+                        .HasColumnOrder(4);
 
                     b.HasKey("Id");
 
@@ -1710,43 +1707,39 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(8);
+                        .HasColumnOrder(7);
 
                     b.Property<string>("Creator")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(9);
+                        .HasColumnOrder(8);
 
                     b.Property<int>("Index")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
-                        .HasColumnOrder(10);
+                        .HasColumnOrder(9);
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Index"));
 
                     b.Property<string>("Label")
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)")
-                        .HasColumnOrder(11);
+                        .HasColumnOrder(10);
 
                     b.Property<DateTime>("Modified")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(6);
+                        .HasColumnOrder(5);
 
                     b.Property<string>("Modifier")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(7);
+                        .HasColumnOrder(6);
 
                     b.Property<string>("Notes")
                         .HasColumnType("text");
 
                     b.Property<long?>("OfficeId")
                         .HasColumnType("bigint");
-
-                    b.Property<long>("OriginId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
 
                     b.Property<long?>("PersonalId")
                         .HasColumnType("bigint");
@@ -1757,8 +1750,12 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
                     b.Property<long?>("ScheduleId")
                         .HasColumnType("bigint");
 
-                    b.Property<int>("GetState")
+                    b.Property<int>("State")
                         .HasColumnType("integer");
+
+                    b.Property<long>("TenantId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
 
                     b.Property<long>("TypeId")
                         .HasColumnType("bigint")
@@ -1767,7 +1764,7 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
                     b.Property<string>("TypeName")
                         .HasMaxLength(768)
                         .HasColumnType("character varying(768)")
-                        .HasColumnOrder(5);
+                        .HasColumnOrder(4);
 
                     b.HasKey("Id");
 
@@ -1800,37 +1797,33 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(8);
+                        .HasColumnOrder(7);
 
                     b.Property<string>("Creator")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(9);
+                        .HasColumnOrder(8);
 
                     b.Property<int>("Index")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
-                        .HasColumnOrder(10);
+                        .HasColumnOrder(9);
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Index"));
 
                     b.Property<string>("Label")
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)")
-                        .HasColumnOrder(11);
+                        .HasColumnOrder(10);
 
                     b.Property<DateTime>("Modified")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(6);
+                        .HasColumnOrder(5);
 
                     b.Property<string>("Modifier")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(7);
-
-                    b.Property<long>("OriginId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
+                        .HasColumnOrder(6);
 
                     b.Property<long?>("PaymentId")
                         .HasColumnType("bigint");
@@ -1840,6 +1833,10 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
 
                     b.Property<long?>("ProcedureId")
                         .HasColumnType("bigint");
+
+                    b.Property<long>("TenantId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
 
                     b.Property<long?>("TermId")
                         .HasColumnType("bigint");
@@ -1854,7 +1851,7 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
                     b.Property<string>("TypeName")
                         .HasMaxLength(768)
                         .HasColumnType("character varying(768)")
-                        .HasColumnOrder(5);
+                        .HasColumnOrder(4);
 
                     b.Property<long?>("VaccineId")
                         .HasColumnType("bigint");
@@ -1894,43 +1891,43 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(8);
+                        .HasColumnOrder(7);
 
                     b.Property<string>("Creator")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(9);
+                        .HasColumnOrder(8);
 
                     b.Property<int>("Index")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
-                        .HasColumnOrder(10);
+                        .HasColumnOrder(9);
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Index"));
 
                     b.Property<string>("Label")
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)")
-                        .HasColumnOrder(11);
+                        .HasColumnOrder(10);
 
                     b.Property<DateTime>("Modified")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(6);
+                        .HasColumnOrder(5);
 
                     b.Property<string>("Modifier")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(7);
-
-                    b.Property<long>("OriginId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
+                        .HasColumnOrder(6);
 
                     b.Property<long?>("PersonalId")
                         .HasColumnType("bigint");
 
                     b.Property<long?>("ProcedureId")
                         .HasColumnType("bigint");
+
+                    b.Property<long>("TenantId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
 
                     b.Property<long?>("TermId")
                         .HasColumnType("bigint");
@@ -1945,7 +1942,7 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
                     b.Property<string>("TypeName")
                         .HasMaxLength(768)
                         .HasColumnType("character varying(768)")
-                        .HasColumnOrder(5);
+                        .HasColumnOrder(4);
 
                     b.Property<long?>("VaccineId")
                         .HasColumnType("bigint");
@@ -1991,43 +1988,43 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(8);
+                        .HasColumnOrder(7);
 
                     b.Property<string>("Creator")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(9);
+                        .HasColumnOrder(8);
 
                     b.Property<int>("Index")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
-                        .HasColumnOrder(10);
+                        .HasColumnOrder(9);
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Index"));
 
                     b.Property<string>("Label")
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)")
-                        .HasColumnOrder(11);
+                        .HasColumnOrder(10);
 
                     b.Property<DateTime>("Modified")
                         .HasColumnType("timestamp")
-                        .HasColumnOrder(6);
+                        .HasColumnOrder(5);
 
                     b.Property<string>("Modifier")
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
-                        .HasColumnOrder(7);
-
-                    b.Property<long>("OriginId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
+                        .HasColumnOrder(6);
 
                     b.Property<long?>("PostSymptomId")
                         .HasColumnType("bigint");
 
                     b.Property<long?>("PriceId")
                         .HasColumnType("bigint");
+
+                    b.Property<long>("TenantId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
 
                     b.Property<long?>("TermId")
                         .HasColumnType("bigint");
@@ -2042,7 +2039,7 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Entries
                     b.Property<string>("TypeName")
                         .HasMaxLength(768)
                         .HasColumnType("character varying(768)")
-                        .HasColumnOrder(5);
+                        .HasColumnOrder(4);
 
                     b.Property<long?>("VaccineId")
                         .HasColumnType("bigint");
