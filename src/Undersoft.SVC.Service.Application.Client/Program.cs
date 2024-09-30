@@ -15,6 +15,7 @@ using Undersoft.SDK.Service;
 using Undersoft.SDK.Service.Access;
 using Undersoft.SDK.Service.Application.Access;
 using Undersoft.SDK.Service.Application.GUI.Models;
+using Undersoft.SDK.Service.Application.GUI.View.Access;
 using Undersoft.SDK.Service.Application.GUI.View.Abstraction;
 using Undersoft.SDK.Service.Data.Remote.Repository;
 using Undersoft.SDK.Service.Data.Store;
