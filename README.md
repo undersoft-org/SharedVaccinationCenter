@@ -3,6 +3,12 @@
 #### Design overview screenshots: 
 [https://github.com/undersoft-org/undersoft-org/Undersoft.Suite/src/VaccinationCenter/docs/design/vaccination_software_design_album](https://github.com/undersoft-org/Undersoft.Suite/tree/master/src/VaccinationCenter/docs/design/vaccination_software_design_album/solution)
 
+### Sign in
+<img src="https://github.com/undersoft-org/Undersoft.SharedVaccinationCenter/blob/master/docs/design/vaccination_software_design_album/features/lightsignin.png" />
+
+### Sign up
+<img src="https://github.com/undersoft-org/Undersoft.SharedVaccinationCenter/blob/master/docs/design/vaccination_software_design_album/features/signup.png" />
+
 ### Guest 
 ![publiclayout](https://github.com/user-attachments/assets/0c4d3434-4491-4d0f-8a4f-0fd1d879b7d3)
 
