@@ -62,8 +62,3 @@
 ### Acounts
 ![SSC_Accounts](https://github.com/undersoft-org/Undersoft/assets/82622935/3def196a-c93b-4797-acd2-cb2a0f4d8d1d)
 
-![SSC_up](https://github.com/undersoft-org/Undersoft/assets/82622935/28a36285-f8af-424e-9c09-ccce29b457e8)
-
-![SSC_in](https://github.com/undersoft-org/Undersoft/assets/82622935/75774832-a5be-4556-b750-96e188660f47)
-
-
