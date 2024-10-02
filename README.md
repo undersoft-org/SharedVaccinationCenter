@@ -3,10 +3,6 @@
 #### Design overview screenshots: 
 [https://github.com/undersoft-org/undersoft-org/Undersoft.Suite/src/VaccinationCenter/docs/design/vaccination_software_design_album](https://github.com/undersoft-org/Undersoft.Suite/tree/master/src/VaccinationCenter/docs/design/vaccination_software_design_album/solution)
 
-
-### Landing
-![SSC_Landing](https://github.com/undersoft-org/Undersoft/assets/82622935/9273f4b7-7c83-42c0-a4af-7f56a7f0dc44)
-
 ### Guest 
 ![publiclayout](https://github.com/user-attachments/assets/0c4d3434-4491-4d0f-8a4f-0fd1d879b7d3)
 
