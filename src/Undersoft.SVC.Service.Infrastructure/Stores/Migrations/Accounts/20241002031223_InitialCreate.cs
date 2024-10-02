@@ -77,78 +77,6 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Accounts
                 });
 
             migrationBuilder.CreateTable(
-                name: "Credentials",
-                schema: "Accounts",
-                columns: table => new
-                {
-                    CodeNo = table.Column<string>(type: "character varying(32)", maxLength: 32, nullable: true),
-                    Id = table.Column<long>(type: "bigint", nullable: false),
-                    TypeId = table.Column<long>(type: "bigint", nullable: false),
-                    OriginId = table.Column<long>(type: "bigint", nullable: false),
-                    TypeName = table.Column<string>(type: "character varying(768)", maxLength: 768, nullable: true),
-                    Modified = table.Column<DateTime>(type: "timestamp", nullable: false),
-                    Modifier = table.Column<string>(type: "character varying(128)", maxLength: 128, nullable: true),
-                    Created = table.Column<DateTime>(type: "timestamp", nullable: false),
-                    Creator = table.Column<string>(type: "character varying(128)", maxLength: 128, nullable: true),
-                    Index = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Label = table.Column<string>(type: "character varying(256)", maxLength: 256, nullable: true),
-                    Site = table.Column<int>(type: "integer", nullable: true),
-                    Type = table.Column<int>(type: "integer", nullable: true),
-                    UserName = table.Column<string>(type: "text", nullable: true),
-                    NormalizedUserName = table.Column<string>(type: "text", nullable: true),
-                    Email = table.Column<string>(type: "text", nullable: true),
-                    OldPassword = table.Column<string>(type: "text", nullable: true),
-                    Password = table.Column<string>(type: "text", nullable: true),
-                    PhoneNumber = table.Column<string>(type: "text", nullable: true),
-                    EmailConfirmed = table.Column<bool>(type: "boolean", nullable: false),
-                    PhoneNumberConfirmed = table.Column<bool>(type: "boolean", nullable: false),
-                    RegistrationCompleted = table.Column<bool>(type: "boolean", nullable: false),
-                    SessionToken = table.Column<string>(type: "text", nullable: true),
-                    PasswordResetToken = table.Column<string>(type: "text", nullable: true),
-                    EmailConfirmationToken = table.Column<string>(type: "text", nullable: true),
-                    PhoneNumberConfirmationToken = table.Column<string>(type: "text", nullable: true),
-                    RegistrationCompleteToken = table.Column<string>(type: "text", nullable: true),
-                    AccessFailedCount = table.Column<int>(type: "integer", nullable: false),
-                    SaveAccountInCookies = table.Column<bool>(type: "boolean", nullable: false),
-                    Authenticated = table.Column<bool>(type: "boolean", nullable: false),
-                    IsLockedOut = table.Column<bool>(type: "boolean", nullable: false),
-                    ReturnPath = table.Column<string>(type: "text", nullable: true),
-                    RetypedPassword = table.Column<string>(type: "text", nullable: true),
-                    FirstName = table.Column<string>(type: "text", nullable: true),
-                    LastName = table.Column<string>(type: "text", nullable: true),
-                    TermsConsent = table.Column<bool>(type: "boolean", nullable: false),
-                    CookiesConsent = table.Column<bool>(type: "boolean", nullable: false),
-                    OptionalConsent = table.Column<bool>(type: "boolean", nullable: false),
-                    NewPassword = table.Column<string>(type: "text", nullable: true),
-                    Image = table.Column<string>(type: "text", nullable: true),
-                    ImageData = table.Column<byte[]>(type: "bytea", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Credentials", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "OperationNotes",
-                schema: "Accounts",
-                columns: table => new
-                {
-                    CodeNo = table.Column<string>(type: "character varying(32)", maxLength: 32, nullable: true),
-                    Id = table.Column<long>(type: "bigint", nullable: false),
-                    TypeId = table.Column<long>(type: "bigint", nullable: false),
-                    TypeName = table.Column<string>(type: "character varying(768)", maxLength: 768, nullable: true),
-                    Errors = table.Column<string>(type: "text", nullable: true),
-                    Success = table.Column<string>(type: "text", nullable: true),
-                    Info = table.Column<string>(type: "text", nullable: true),
-                    Status = table.Column<int>(type: "integer", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_OperationNotes", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Organizations",
                 schema: "Accounts",
                 columns: table => new
@@ -668,11 +596,7 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Accounts
                     ConsentId = table.Column<long>(type: "bigint", nullable: true),
                     SubscriptionId = table.Column<long>(type: "bigint", nullable: true),
                     PaymentId = table.Column<long>(type: "bigint", nullable: true),
-                    TenantId = table.Column<long>(type: "bigint", nullable: true),
-                    CredentialsId = table.Column<long>(type: "bigint", nullable: true),
-                    NotesId = table.Column<long>(type: "bigint", nullable: true),
-                    IsAvailable = table.Column<bool>(type: "boolean", nullable: false),
-                    Authenticated = table.Column<bool>(type: "boolean", nullable: false)
+                    TenantId = table.Column<long>(type: "bigint", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -712,18 +636,6 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Accounts
                         column: x => x.ProfessionalId,
                         principalSchema: "Accounts",
                         principalTable: "AccountProffesionals",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Accounts_Credentials_CredentialsId",
-                        column: x => x.CredentialsId,
-                        principalSchema: "Accounts",
-                        principalTable: "Credentials",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Accounts_OperationNotes_NotesId",
-                        column: x => x.NotesId,
-                        principalSchema: "Accounts",
-                        principalTable: "OperationNotes",
                         principalColumn: "Id");
                 });
 
@@ -929,18 +841,6 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Accounts
                 table: "Accounts",
                 column: "ConsentId",
                 unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Accounts_CredentialsId",
-                schema: "Accounts",
-                table: "Accounts",
-                column: "CredentialsId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Accounts_NotesId",
-                schema: "Accounts",
-                table: "Accounts",
-                column: "NotesId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Accounts_OrganizationId",
@@ -1240,14 +1140,6 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Accounts
 
             migrationBuilder.DropTable(
                 name: "AccountTenants",
-                schema: "Accounts");
-
-            migrationBuilder.DropTable(
-                name: "Credentials",
-                schema: "Accounts");
-
-            migrationBuilder.DropTable(
-                name: "OperationNotes",
                 schema: "Accounts");
 
             migrationBuilder.DropTable(

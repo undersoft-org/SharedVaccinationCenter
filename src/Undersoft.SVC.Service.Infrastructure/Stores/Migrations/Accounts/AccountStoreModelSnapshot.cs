@@ -38,194 +38,6 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Accounts
                     b.ToTable("AccountRole", "Accounts");
                 });
 
-            modelBuilder.Entity("Undersoft.SDK.Service.Access.Credentials", b =>
-                {
-                    b.Property<long>("Id")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(1);
-
-                    b.Property<int>("AccessFailedCount")
-                        .HasColumnType("integer");
-
-                    b.Property<bool>("Authenticated")
-                        .HasColumnType("boolean");
-
-                    b.Property<string>("CodeNo")
-                        .IsConcurrencyToken()
-                        .HasMaxLength(32)
-                        .HasColumnType("character varying(32)")
-                        .HasColumnOrder(0);
-
-                    b.Property<bool>("CookiesConsent")
-                        .HasColumnType("boolean");
-
-                    b.Property<DateTime>("Created")
-                        .HasColumnType("timestamp")
-                        .HasColumnOrder(7);
-
-                    b.Property<string>("Creator")
-                        .HasMaxLength(128)
-                        .HasColumnType("character varying(128)")
-                        .HasColumnOrder(8);
-
-                    b.Property<string>("Email")
-                        .HasColumnType("text");
-
-                    b.Property<string>("EmailConfirmationToken")
-                        .HasColumnType("text");
-
-                    b.Property<bool>("EmailConfirmed")
-                        .HasColumnType("boolean");
-
-                    b.Property<string>("FirstName")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Image")
-                        .HasColumnType("text");
-
-                    b.Property<byte[]>("ImageData")
-                        .HasColumnType("bytea");
-
-                    b.Property<int>("Index")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasColumnOrder(9);
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Index"));
-
-                    b.Property<bool>("IsLockedOut")
-                        .HasColumnType("boolean");
-
-                    b.Property<string>("Label")
-                        .HasMaxLength(256)
-                        .HasColumnType("character varying(256)")
-                        .HasColumnOrder(10);
-
-                    b.Property<string>("LastName")
-                        .HasColumnType("text");
-
-                    b.Property<DateTime>("Modified")
-                        .HasColumnType("timestamp")
-                        .HasColumnOrder(5);
-
-                    b.Property<string>("Modifier")
-                        .HasMaxLength(128)
-                        .HasColumnType("character varying(128)")
-                        .HasColumnOrder(6);
-
-                    b.Property<string>("NewPassword")
-                        .HasColumnType("text");
-
-                    b.Property<string>("NormalizedUserName")
-                        .HasColumnType("text");
-
-                    b.Property<string>("OldPassword")
-                        .HasColumnType("text");
-
-                    b.Property<bool>("OptionalConsent")
-                        .HasColumnType("boolean");
-
-                    b.Property<long>("OriginId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
-
-                    b.Property<string>("Password")
-                        .HasColumnType("text");
-
-                    b.Property<string>("PasswordResetToken")
-                        .HasColumnType("text");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("text");
-
-                    b.Property<string>("PhoneNumberConfirmationToken")
-                        .HasColumnType("text");
-
-                    b.Property<bool>("PhoneNumberConfirmed")
-                        .HasColumnType("boolean");
-
-                    b.Property<string>("RegistrationCompleteToken")
-                        .HasColumnType("text");
-
-                    b.Property<bool>("RegistrationCompleted")
-                        .HasColumnType("boolean");
-
-                    b.Property<string>("ReturnPath")
-                        .HasColumnType("text");
-
-                    b.Property<string>("RetypedPassword")
-                        .HasColumnType("text");
-
-                    b.Property<bool>("SaveAccountInCookies")
-                        .HasColumnType("boolean");
-
-                    b.Property<string>("SessionToken")
-                        .HasColumnType("text");
-
-                    b.Property<int?>("Site")
-                        .HasColumnType("integer");
-
-                    b.Property<bool>("TermsConsent")
-                        .HasColumnType("boolean");
-
-                    b.Property<int?>("Type")
-                        .HasColumnType("integer");
-
-                    b.Property<long>("TypeId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(2);
-
-                    b.Property<string>("TypeName")
-                        .HasMaxLength(768)
-                        .HasColumnType("character varying(768)")
-                        .HasColumnOrder(4);
-
-                    b.Property<string>("UserName")
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Credentials", "Accounts");
-                });
-
-            modelBuilder.Entity("Undersoft.SDK.Service.Operation.OperationNotes", b =>
-                {
-                    b.Property<long>("Id")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(1);
-
-                    b.Property<string>("CodeNo")
-                        .IsConcurrencyToken()
-                        .HasMaxLength(32)
-                        .HasColumnType("character varying(32)")
-                        .HasColumnOrder(0);
-
-                    b.Property<string>("Errors")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Info")
-                        .HasColumnType("text");
-
-                    b.Property<int>("Status")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("Success")
-                        .HasColumnType("text");
-
-                    b.Property<long>("TypeId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(2);
-
-                    b.Property<string>("TypeName")
-                        .HasMaxLength(768)
-                        .HasColumnType("character varying(768)")
-                        .HasColumnOrder(4);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("OperationNotes", "Accounts");
-                });
-
             modelBuilder.Entity("Undersoft.SDK.Service.Server.Accounts.Account", b =>
                 {
                     b.Property<long>("Id")
@@ -234,9 +46,6 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Accounts
 
                     b.Property<long?>("AddressId")
                         .HasColumnType("bigint");
-
-                    b.Property<bool>("Authenticated")
-                        .HasColumnType("boolean");
 
                     b.Property<string>("CodeNo")
                         .IsConcurrencyToken()
@@ -256,18 +65,12 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Accounts
                         .HasColumnType("character varying(128)")
                         .HasColumnOrder(8);
 
-                    b.Property<long?>("CredentialsId")
-                        .HasColumnType("bigint");
-
                     b.Property<int>("Index")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
                         .HasColumnOrder(9);
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Index"));
-
-                    b.Property<bool>("IsAvailable")
-                        .HasColumnType("boolean");
 
                     b.Property<string>("Label")
                         .HasMaxLength(256)
@@ -282,9 +85,6 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Accounts
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
                         .HasColumnOrder(6);
-
-                    b.Property<long?>("NotesId")
-                        .HasColumnType("bigint");
 
                     b.Property<long?>("OrganizationId")
                         .HasColumnType("bigint");
@@ -327,10 +127,6 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Accounts
 
                     b.HasIndex("ConsentId")
                         .IsUnique();
-
-                    b.HasIndex("CredentialsId");
-
-                    b.HasIndex("NotesId");
 
                     b.HasIndex("OrganizationId")
                         .IsUnique();
@@ -1734,14 +1530,6 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Accounts
                         .WithOne()
                         .HasForeignKey("Undersoft.SDK.Service.Server.Accounts.Account", "ConsentId");
 
-                    b.HasOne("Undersoft.SDK.Service.Access.Credentials", "Credentials")
-                        .WithMany()
-                        .HasForeignKey("CredentialsId");
-
-                    b.HasOne("Undersoft.SDK.Service.Operation.OperationNotes", "Notes")
-                        .WithMany()
-                        .HasForeignKey("NotesId");
-
                     b.HasOne("Undersoft.SDK.Service.Server.Accounts.Identity.AccountOrganization", "Organization")
                         .WithOne()
                         .HasForeignKey("Undersoft.SDK.Service.Server.Accounts.Account", "OrganizationId");
@@ -1769,10 +1557,6 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Accounts
                     b.Navigation("Address");
 
                     b.Navigation("Consent");
-
-                    b.Navigation("Credentials");
-
-                    b.Navigation("Notes");
 
                     b.Navigation("Organization");
 

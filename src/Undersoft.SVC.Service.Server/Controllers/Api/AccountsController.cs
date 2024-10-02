@@ -28,9 +28,10 @@ namespace Undersoft.SVC.Service.Server.Controllers.Api
         >
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="AccountsController"/> class.
+        /// Initializes a new instance of the <see cref="AccountsController"/>
+        /// class.
         /// </summary>
         /// <param name="servicer">The servicer.</param>
-        public AccountsController(IServicer servicer) : base(servicer) { }
+        public AccountsController(IServicer servicer) : base(servicer, EventPublishMode.None) { }
     }
 }

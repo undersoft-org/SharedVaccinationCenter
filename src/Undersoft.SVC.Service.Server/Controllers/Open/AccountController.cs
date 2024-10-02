@@ -25,9 +25,10 @@ namespace Undersoft.SVC.Service.Server.Controllers.Open
         >
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="AccountController"/> class.
+        /// Initializes a new instance of the <see cref="AccountController"/>
+        /// class.
         /// </summary>
         /// <param name="servicer">The servicer.</param>
-        public AccountController(IServicer servicer) : base(servicer) { }
+        public AccountController(IServicer servicer) : base(servicer, EventPublishMode.None) { }
     }
 }
