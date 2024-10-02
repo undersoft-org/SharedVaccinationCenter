@@ -1,4 +1,6 @@
 # Shared Vaccination Center
+
+Undersoft Software Development Kit implemantation example of distributed, scalable, multi tenant web application in N-Tier architecture.
       
 #### Design overview screenshots: 
 [https://github.com/undersoft-org/undersoft-org/Undersoft.Suite/src/VaccinationCenter/docs/design/vaccination_software_design_album](https://github.com/undersoft-org/Undersoft.Suite/tree/master/src/VaccinationCenter/docs/design/vaccination_software_design_album/solution)
