@@ -125,6 +125,10 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Accounts
                     b.Property<bool>("OptionalConsent")
                         .HasColumnType("boolean");
 
+                    b.Property<long>("OriginId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
+
                     b.Property<string>("Password")
                         .HasColumnType("text");
 
@@ -160,10 +164,6 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Accounts
 
                     b.Property<int?>("Site")
                         .HasColumnType("integer");
-
-                    b.Property<long>("TenantId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
 
                     b.Property<bool>("TermsConsent")
                         .HasColumnType("boolean");
@@ -289,6 +289,10 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Accounts
                     b.Property<long?>("OrganizationId")
                         .HasColumnType("bigint");
 
+                    b.Property<long>("OriginId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
+
                     b.Property<long?>("PaymentId")
                         .HasColumnType("bigint");
 
@@ -406,6 +410,10 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Accounts
                         .HasColumnType("character varying(128)")
                         .HasColumnOrder(6);
 
+                    b.Property<long>("OriginId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
+
                     b.Property<string>("Postcode")
                         .HasColumnType("text");
 
@@ -414,10 +422,6 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Accounts
 
                     b.Property<string>("Street")
                         .HasColumnType("text");
-
-                    b.Property<long>("TenantId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
 
                     b.Property<long>("TypeId")
                         .HasColumnType("bigint")
@@ -559,12 +563,12 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Accounts
                     b.Property<string>("OrganizationWebsites")
                         .HasColumnType("text");
 
-                    b.Property<string>("PositionInOrganization")
-                        .HasColumnType("text");
-
-                    b.Property<long>("TenantId")
+                    b.Property<long>("OriginId")
                         .HasColumnType("bigint")
                         .HasColumnOrder(3);
+
+                    b.Property<string>("PositionInOrganization")
+                        .HasColumnType("text");
 
                     b.Property<long>("TypeId")
                         .HasColumnType("bigint")
@@ -651,6 +655,10 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Accounts
                         .HasColumnType("character varying(128)")
                         .HasColumnOrder(6);
 
+                    b.Property<long>("OriginId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
+
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("text");
 
@@ -659,10 +667,6 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Accounts
 
                     b.Property<string>("SocialMedia")
                         .HasColumnType("text");
-
-                    b.Property<long>("TenantId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
 
                     b.Property<string>("Title")
                         .HasColumnType("text");
@@ -732,6 +736,10 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Accounts
                         .HasColumnType("character varying(128)")
                         .HasColumnOrder(6);
 
+                    b.Property<long>("OriginId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
+
                     b.Property<string>("Profession")
                         .HasColumnType("text");
 
@@ -752,10 +760,6 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Accounts
 
                     b.Property<string>("ProfessionalWebsites")
                         .HasColumnType("text");
-
-                    b.Property<long>("TenantId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
 
                     b.Property<long>("TypeId")
                         .HasColumnType("bigint")
@@ -934,12 +938,12 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Accounts
                     b.Property<string>("OrganizationWebsites")
                         .HasColumnType("text");
 
-                    b.Property<string>("PositionInOrganization")
-                        .HasColumnType("text");
-
-                    b.Property<long>("TenantId")
+                    b.Property<long>("OriginId")
                         .HasColumnType("bigint")
                         .HasColumnOrder(3);
+
+                    b.Property<string>("PositionInOrganization")
+                        .HasColumnType("text");
 
                     b.Property<long>("TypeId")
                         .HasColumnType("bigint")
@@ -1073,15 +1077,15 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Accounts
                         .HasColumnType("character varying(128)")
                         .HasColumnOrder(6);
 
+                    b.Property<long>("OriginId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
+
                     b.Property<bool>("PersonalDataConsent")
                         .HasColumnType("boolean");
 
                     b.Property<string>("PersonalDataText")
                         .HasColumnType("text");
-
-                    b.Property<long>("TenantId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
 
                     b.Property<bool>("TermsConsent")
                         .HasColumnType("boolean");
@@ -1174,6 +1178,10 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Accounts
                         .HasColumnType("character varying(128)")
                         .HasColumnOrder(6);
 
+                    b.Property<long>("OriginId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
+
                     b.Property<string>("PaymentFirstName")
                         .HasColumnType("text");
 
@@ -1206,10 +1214,6 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Accounts
 
                     b.Property<string>("PaymentWebsites")
                         .HasColumnType("text");
-
-                    b.Property<long>("TenantId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
 
                     b.Property<long>("TypeId")
                         .HasColumnType("bigint")
@@ -1278,15 +1282,15 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Accounts
                         .HasColumnType("character varying(128)")
                         .HasColumnOrder(6);
 
+                    b.Property<long>("OriginId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
+
                     b.Property<bool>("PersonalDataConsent")
                         .HasColumnType("boolean");
 
                     b.Property<string>("PersonalDataText")
                         .HasColumnType("text");
-
-                    b.Property<long>("TenantId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
 
                     b.Property<bool>("TermsConsent")
                         .HasColumnType("boolean");
@@ -1371,6 +1375,10 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Accounts
                         .HasColumnType("character varying(128)")
                         .HasColumnOrder(6);
 
+                    b.Property<long>("OriginId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
+
                     b.Property<string>("PaymentFirstName")
                         .HasColumnType("text");
 
@@ -1400,10 +1408,6 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Accounts
 
                     b.Property<string>("PaymentWebsites")
                         .HasColumnType("text");
-
-                    b.Property<long>("TenantId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
 
                     b.Property<long>("TypeId")
                         .HasColumnType("bigint")
@@ -1461,6 +1465,10 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Accounts
                         .HasColumnType("character varying(128)")
                         .HasColumnOrder(6);
 
+                    b.Property<long>("OriginId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
+
                     b.Property<string>("SubscriptionCurrency")
                         .HasColumnType("text");
 
@@ -1487,10 +1495,6 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Accounts
 
                     b.Property<double>("SubscriptionValue")
                         .HasColumnType("double precision");
-
-                    b.Property<long>("TenantId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
 
                     b.Property<long>("TypeId")
                         .HasColumnType("bigint")
@@ -1552,6 +1556,10 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Accounts
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
                         .HasColumnOrder(6);
+
+                    b.Property<long>("OriginId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
 
                     b.Property<long?>("TenantId")
                         .HasColumnType("bigint");
@@ -1626,7 +1634,7 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Accounts
                         .HasColumnType("character varying(128)")
                         .HasColumnOrder(6);
 
-                    b.Property<long>("TenantId")
+                    b.Property<long>("OriginId")
                         .HasColumnType("bigint")
                         .HasColumnOrder(3);
 

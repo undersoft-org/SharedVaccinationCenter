@@ -38,7 +38,7 @@ public class AccountMenuItems : DataObject
     [Link]
     [MenuItem]
     [Extended]
-    [ViewRubric("Sign up")]
+    [DisplayRubric("Sign up")]
     public string SignUp { get; set; } = "/access/sign_up";
 
     /// <summary>

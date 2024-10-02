@@ -76,15 +76,15 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Events
                         .HasColumnType("character varying(128)")
                         .HasColumnOrder(6);
 
+                    b.Property<long>("OriginId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
+
                     b.Property<int>("PublishStatus")
                         .HasColumnType("integer");
 
                     b.Property<DateTime>("PublishTime")
                         .HasColumnType("timestamp");
-
-                    b.Property<long>("TenantId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
 
                     b.Property<long>("TypeId")
                         .HasColumnType("bigint")

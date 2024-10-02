@@ -7,9 +7,11 @@
 // *************************************************
 
 using Undersoft.SDK.Service.Data.Contract;
+using Undersoft.SDK.Service.Operation;
 
 namespace Undersoft.SVC.Service.Contracts.Accounts
 {
+    [Validator("AccountPersonalValidator")]
     public class AccountPersonal : SDK.Service.Access.Identity.Personal, IContract
     {
         public virtual long? AccountId { get; set; }

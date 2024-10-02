@@ -31,6 +31,7 @@ using Undersoft.SVC.Service.Application.ViewModels.Inventory;
 using Undersoft.SVC.Service.Application.ViewModels.Vaccination;
 using Undersoft.SVC.Service.Clients;
 using Undersoft.SVC.Service.Contracts;
+using Undersoft.SVC.Service.Contracts.Accounts;
 
 /// <summary>
 /// The program.
@@ -88,6 +89,8 @@ public class Program
                     )
                     .AddScoped<IValidator<IViewData<Credentials>>, AccessValidator>()
                     .AddScoped<IValidator<IViewData<Account>>, AccountValidator>()
+                    .AddScoped<IValidator<IViewData<AccountAddress>>, AccountAddressValidator>()
+                    .AddScoped<IValidator<IViewData<AccountPersonal>>, AccountPersonalValidator>()
                     .AddScoped<IValidator<IViewData<ViewModels.Event>>, EventValidator>()
                     .AddScoped<
                         IValidator<IViewData<Appointment>>,

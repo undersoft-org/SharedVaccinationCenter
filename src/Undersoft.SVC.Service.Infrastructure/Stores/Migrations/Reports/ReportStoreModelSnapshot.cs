@@ -67,12 +67,12 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Reports
                         .HasColumnType("character varying(128)")
                         .HasColumnOrder(6);
 
-                    b.Property<long?>("RightEntityId")
-                        .HasColumnType("bigint");
-
-                    b.Property<long>("TenantId")
+                    b.Property<long>("OriginId")
                         .HasColumnType("bigint")
                         .HasColumnOrder(3);
+
+                    b.Property<long?>("RightEntityId")
+                        .HasColumnType("bigint");
 
                     b.Property<long>("TypeId")
                         .HasColumnType("bigint")
@@ -152,6 +152,10 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Reports
                     b.Property<string>("Notes")
                         .HasColumnType("text");
 
+                    b.Property<long>("OriginId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
+
                     b.Property<string>("Postcode")
                         .HasColumnType("text");
 
@@ -163,10 +167,6 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Reports
 
                     b.Property<long?>("SupplierId")
                         .HasColumnType("bigint");
-
-                    b.Property<long>("TenantId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
 
                     b.Property<long>("TypeId")
                         .HasColumnType("bigint")
@@ -232,12 +232,12 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Reports
                     b.Property<string>("Name")
                         .HasColumnType("text");
 
-                    b.Property<long?>("PriceId")
-                        .HasColumnType("bigint");
-
-                    b.Property<long>("TenantId")
+                    b.Property<long>("OriginId")
                         .HasColumnType("bigint")
                         .HasColumnOrder(3);
+
+                    b.Property<long?>("PriceId")
+                        .HasColumnType("bigint");
 
                     b.Property<long>("TypeId")
                         .HasColumnType("bigint")
@@ -309,7 +309,7 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Reports
                     b.Property<string>("Name")
                         .HasColumnType("text");
 
-                    b.Property<long>("TenantId")
+                    b.Property<long>("OriginId")
                         .HasColumnType("bigint")
                         .HasColumnOrder(3);
 
@@ -377,7 +377,7 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Reports
                     b.Property<string>("Number")
                         .HasColumnType("text");
 
-                    b.Property<long>("TenantId")
+                    b.Property<long>("OriginId")
                         .HasColumnType("bigint")
                         .HasColumnOrder(3);
 
@@ -451,12 +451,12 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Reports
                     b.Property<long?>("OrganizationId")
                         .HasColumnType("bigint");
 
-                    b.Property<long?>("ProfessionalId")
-                        .HasColumnType("bigint");
-
-                    b.Property<long>("TenantId")
+                    b.Property<long>("OriginId")
                         .HasColumnType("bigint")
                         .HasColumnOrder(3);
+
+                    b.Property<long?>("ProfessionalId")
+                        .HasColumnType("bigint");
 
                     b.Property<long>("TypeId")
                         .HasColumnType("bigint")
@@ -522,6 +522,10 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Reports
                     b.Property<string>("Notes")
                         .HasColumnType("text");
 
+                    b.Property<long>("OriginId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
+
                     b.Property<long?>("SafetyId")
                         .HasColumnType("bigint");
 
@@ -530,10 +534,6 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Reports
 
                     b.Property<long?>("StockId")
                         .HasColumnType("bigint");
-
-                    b.Property<long>("TenantId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
 
                     b.Property<long>("TypeId")
                         .HasColumnType("bigint")
@@ -607,15 +607,15 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Reports
                     b.Property<string>("Name")
                         .HasColumnType("text");
 
+                    b.Property<long>("OriginId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
+
                     b.Property<long?>("ProcedureId")
                         .HasColumnType("bigint");
 
                     b.Property<double?>("Tax")
                         .HasColumnType("double precision");
-
-                    b.Property<long>("TenantId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
 
                     b.Property<long?>("TrafficId")
                         .HasColumnType("bigint");
@@ -684,15 +684,15 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Reports
                     b.Property<string>("Notes")
                         .HasColumnType("text");
 
+                    b.Property<long>("OriginId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
+
                     b.Property<float?>("Quentity")
                         .HasColumnType("real");
 
                     b.Property<long?>("StockId")
                         .HasColumnType("bigint");
-
-                    b.Property<long>("TenantId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
 
                     b.Property<long>("TypeId")
                         .HasColumnType("bigint")
@@ -760,7 +760,7 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Reports
                     b.Property<string>("Notes")
                         .HasColumnType("text");
 
-                    b.Property<long>("TenantId")
+                    b.Property<long>("OriginId")
                         .HasColumnType("bigint")
                         .HasColumnOrder(3);
 
@@ -834,6 +834,10 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Reports
                     b.Property<string>("Notes")
                         .HasColumnType("text");
 
+                    b.Property<long>("OriginId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
+
                     b.Property<long?>("PriceId")
                         .HasColumnType("bigint");
 
@@ -842,10 +846,6 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Reports
 
                     b.Property<long?>("StockId")
                         .HasColumnType("bigint");
-
-                    b.Property<long>("TenantId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
 
                     b.Property<int>("Type")
                         .HasColumnType("integer");
@@ -943,15 +943,15 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Reports
                     b.Property<string>("OrganizationWebsites")
                         .HasColumnType("text");
 
+                    b.Property<long>("OriginId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
+
                     b.Property<string>("PositionInOrganization")
                         .HasColumnType("text");
 
                     b.Property<long?>("SupplierId")
                         .HasColumnType("bigint");
-
-                    b.Property<long>("TenantId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
 
                     b.Property<long>("TypeId")
                         .HasColumnType("bigint")
@@ -1023,12 +1023,12 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Reports
                     b.Property<string>("Name")
                         .HasColumnType("text");
 
-                    b.Property<double?>("Tax")
-                        .HasColumnType("double precision");
-
-                    b.Property<long>("TenantId")
+                    b.Property<long>("OriginId")
                         .HasColumnType("bigint")
                         .HasColumnOrder(3);
+
+                    b.Property<double?>("Tax")
+                        .HasColumnType("double precision");
 
                     b.Property<long>("TypeId")
                         .HasColumnType("bigint")
@@ -1124,6 +1124,10 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Reports
                         .HasColumnType("character varying(128)")
                         .HasColumnOrder(6);
 
+                    b.Property<long>("OriginId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
+
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("text");
 
@@ -1135,10 +1139,6 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Reports
 
                     b.Property<string>("SocialMedia")
                         .HasColumnType("text");
-
-                    b.Property<long>("TenantId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
 
                     b.Property<string>("Title")
                         .HasColumnType("text");
@@ -1213,15 +1213,15 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Reports
                     b.Property<string>("Name")
                         .HasColumnType("text");
 
+                    b.Property<long>("OriginId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
+
                     b.Property<long?>("ProcedureId")
                         .HasColumnType("bigint");
 
                     b.Property<double?>("Tax")
                         .HasColumnType("double precision");
-
-                    b.Property<long>("TenantId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
 
                     b.Property<long?>("TrafficId")
                         .HasColumnType("bigint");
@@ -1290,6 +1290,10 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Reports
                         .HasColumnType("character varying(128)")
                         .HasColumnOrder(6);
 
+                    b.Property<long>("OriginId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
+
                     b.Property<string>("Profession")
                         .HasColumnType("text");
 
@@ -1328,10 +1332,6 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Reports
 
                     b.Property<long?>("SupplierId")
                         .HasColumnType("bigint");
-
-                    b.Property<long>("TenantId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
 
                     b.Property<long>("TypeId")
                         .HasColumnType("bigint")
@@ -1400,12 +1400,12 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Reports
                         .HasColumnType("character varying(128)")
                         .HasColumnOrder(6);
 
-                    b.Property<float?>("Temperature")
-                        .HasColumnType("real");
-
-                    b.Property<long>("TenantId")
+                    b.Property<long>("OriginId")
                         .HasColumnType("bigint")
                         .HasColumnOrder(3);
+
+                    b.Property<float?>("Temperature")
+                        .HasColumnType("real");
 
                     b.Property<long>("TypeId")
                         .HasColumnType("bigint")
@@ -1483,15 +1483,15 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Reports
                     b.Property<string>("Notes")
                         .HasColumnType("text");
 
+                    b.Property<long>("OriginId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
+
                     b.Property<DateTime?>("StartDate")
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<TimeOnly?>("StartTime")
                         .HasColumnType("time without time zone");
-
-                    b.Property<long>("TenantId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
 
                     b.Property<int>("Type")
                         .HasColumnType("integer");
@@ -1566,7 +1566,7 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Reports
                     b.Property<string>("Notes")
                         .HasColumnType("text");
 
-                    b.Property<long>("TenantId")
+                    b.Property<long>("OriginId")
                         .HasColumnType("bigint")
                         .HasColumnOrder(3);
 
@@ -1661,15 +1661,15 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Reports
                     b.Property<string>("Name")
                         .HasColumnType("text");
 
+                    b.Property<long>("OriginId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
+
                     b.Property<long?>("PostSymptomId")
                         .HasColumnType("bigint");
 
                     b.Property<long?>("ProcedureId")
                         .HasColumnType("bigint");
-
-                    b.Property<long>("TenantId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
 
                     b.Property<long>("TypeId")
                         .HasColumnType("bigint")
@@ -1738,6 +1738,10 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Reports
                     b.Property<long?>("OfficeId")
                         .HasColumnType("bigint");
 
+                    b.Property<long>("OriginId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
+
                     b.Property<long?>("PersonalId")
                         .HasColumnType("bigint");
 
@@ -1749,10 +1753,6 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Reports
 
                     b.Property<int>("State")
                         .HasColumnType("integer");
-
-                    b.Property<long>("TenantId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
 
                     b.Property<long>("TypeId")
                         .HasColumnType("bigint")
@@ -1822,6 +1822,10 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Reports
                         .HasColumnType("character varying(128)")
                         .HasColumnOrder(6);
 
+                    b.Property<long>("OriginId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
+
                     b.Property<long?>("PaymentId")
                         .HasColumnType("bigint");
 
@@ -1830,10 +1834,6 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Reports
 
                     b.Property<long?>("ProcedureId")
                         .HasColumnType("bigint");
-
-                    b.Property<long>("TenantId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
 
                     b.Property<long?>("TermId")
                         .HasColumnType("bigint");
@@ -1916,15 +1916,15 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Reports
                         .HasColumnType("character varying(128)")
                         .HasColumnOrder(6);
 
+                    b.Property<long>("OriginId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
+
                     b.Property<long?>("PersonalId")
                         .HasColumnType("bigint");
 
                     b.Property<long?>("ProcedureId")
                         .HasColumnType("bigint");
-
-                    b.Property<long>("TenantId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
 
                     b.Property<long?>("TermId")
                         .HasColumnType("bigint");
@@ -2013,15 +2013,15 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Reports
                         .HasColumnType("character varying(128)")
                         .HasColumnOrder(6);
 
+                    b.Property<long>("OriginId")
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(3);
+
                     b.Property<long?>("PostSymptomId")
                         .HasColumnType("bigint");
 
                     b.Property<long?>("PriceId")
                         .HasColumnType("bigint");
-
-                    b.Property<long>("TenantId")
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(3);
 
                     b.Property<long?>("TermId")
                         .HasColumnType("bigint");
