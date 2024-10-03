@@ -335,6 +335,9 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Accounts
                         .HasColumnType("character varying(128)")
                         .HasColumnOrder(6);
 
+                    b.Property<string>("OrganizationEmail")
+                        .HasColumnType("text");
+
                     b.Property<string>("OrganizationFullName")
                         .HasColumnType("text");
 
@@ -351,6 +354,9 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Accounts
                         .HasColumnType("text");
 
                     b.Property<string>("OrganizationName")
+                        .HasColumnType("text");
+
+                    b.Property<string>("OrganizationPhoneNumber")
                         .HasColumnType("text");
 
                     b.Property<int>("OrganizationSize")
@@ -418,8 +424,8 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Accounts
                     b.Property<string>("FirstName")
                         .HasColumnType("text");
 
-                    b.Property<string>("Gender")
-                        .HasColumnType("text");
+                    b.Property<int>("Gender")
+                        .HasColumnType("integer");
 
                     b.Property<string>("Image")
                         .HasColumnType("text");
@@ -713,6 +719,9 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Accounts
                         .HasColumnType("character varying(128)")
                         .HasColumnOrder(6);
 
+                    b.Property<string>("OrganizationEmail")
+                        .HasColumnType("text");
+
                     b.Property<string>("OrganizationFullName")
                         .HasColumnType("text");
 
@@ -726,6 +735,9 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Accounts
                         .HasColumnType("text");
 
                     b.Property<string>("OrganizationName")
+                        .HasColumnType("text");
+
+                    b.Property<string>("OrganizationPhoneNumber")
                         .HasColumnType("text");
 
                     b.Property<int>("OrganizationSize")

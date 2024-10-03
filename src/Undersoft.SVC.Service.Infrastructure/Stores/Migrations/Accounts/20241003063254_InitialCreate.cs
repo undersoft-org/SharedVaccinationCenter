@@ -97,6 +97,8 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Accounts
                     OrganizationIndustry = table.Column<string>(type: "text", nullable: true),
                     OrganizationName = table.Column<string>(type: "text", nullable: true),
                     OrganizationFullName = table.Column<string>(type: "text", nullable: true),
+                    OrganizationEmail = table.Column<string>(type: "text", nullable: true),
+                    OrganizationPhoneNumber = table.Column<string>(type: "text", nullable: true),
                     PositionInOrganization = table.Column<string>(type: "text", nullable: true),
                     OrganizationWebsites = table.Column<string>(type: "text", nullable: true),
                     OrganizationImageData = table.Column<byte[]>(type: "bytea", nullable: true),
@@ -422,6 +424,8 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Accounts
                     OrganizationIndustry = table.Column<string>(type: "text", nullable: true),
                     OrganizationName = table.Column<string>(type: "text", nullable: true),
                     OrganizationFullName = table.Column<string>(type: "text", nullable: true),
+                    OrganizationEmail = table.Column<string>(type: "text", nullable: true),
+                    OrganizationPhoneNumber = table.Column<string>(type: "text", nullable: true),
                     PositionInOrganization = table.Column<string>(type: "text", nullable: true),
                     OrganizationWebsites = table.Column<string>(type: "text", nullable: true),
                     OrganizationImageData = table.Column<byte[]>(type: "bytea", nullable: true),
@@ -513,7 +517,7 @@ namespace Undersoft.SVC.Service.Infrastructure.Stores.Migrations.Accounts
                     SecondName = table.Column<string>(type: "text", nullable: true),
                     SocialMedia = table.Column<string>(type: "text", nullable: true),
                     Websites = table.Column<string>(type: "text", nullable: true),
-                    Gender = table.Column<string>(type: "text", nullable: true)
+                    Gender = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {

@@ -12,35 +12,30 @@ namespace Undersoft.SVC.Service.Contracts
 
         public string? OrganizatioIdentifier { get; set; }
 
-        [VisibleRubric]
         [DisplayRubric("Organization logo")]
         [ViewImage(ViewImageMode.Regular, "30px", "30px")]
         [FileRubric(FileRubricType.Property, "OrganizationImageData")]
         public string? OrganizationImage { get; set; }
 
-        [VisibleRubric]
         [DisplayRubric("Industry")]
         public string? OrganizationIndustry { get; set; }
 
-        [VisibleRubric]
         [DisplayRubric("Short name")]
         public string? OrganizationName { get; set; }
 
-        [VisibleRubric]
         [DisplayRubric("Full name")]
         public string? OrganizationFullName { get; set; }
 
-        [VisibleRubric]
         [DisplayRubric("Position")]
         public string? PositionInOrganization { get; set; }
 
-        [VisibleRubric]
         [DisplayRubric("Websites")]
         public string? OrganizationWebsites { get; set; }
 
-        public byte[]? OrganizationImageData { get; set; }
-
+        [DisplayRubric("Websites")]
         public OrganizationSize OrganizationSize { get; set; }
+
+        public byte[]? OrganizationImageData { get; set; }
 
         public long? SupplierId { get; set; }
     }

@@ -32,27 +32,16 @@ public class Setup
             .ConfigureServer(
                 true,
                 new[] { typeof(EventStore), typeof(EntryStore), typeof(ReportStore) },
-                new[]
-                {
-                    typeof(ApplicationClient),
-                    typeof(AccessClient)
-                }
+                new[] { typeof(ApplicationClient), typeof(AccessClient) }
             )
             .AddDataServer<IEntityStore>(
-                DataServerTypes.Rest | DataServerTypes.OData,
-                builder =>
-                    builder
-                        .AddInvocations<Request>()
-                        .AddInvocations<Stock>()
-                        .AddInvocations<Traffic>()
+                DataServerTypes.Rest | DataServerTypes.OData
             )
             .AddDataServer<IEventStore>(
-                DataServerTypes.All,
-                builder => builder.AddInvocations<EventInfo>()
+                DataServerTypes.All
             )
             .AddDataServer<IAccountStore>(
-                DataServerTypes.All,
-                builder => builder.AddInvocations<Account>()
+                DataServerTypes.All
             );
     }
 
@@ -64,7 +53,7 @@ public class Setup
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
         app.UseServerSetup(env)
-            .UseServiceServer(new string[] { "v1" })
+        .UseServiceServer(["v1"], true)            
             .UseInternalProvider()
             .UseDataMigrations()
             .UseServiceClients();

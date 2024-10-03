@@ -21,7 +21,7 @@ public class Organization : DataObject, IViewModel
     [RubricSize(16)]
     [DisplayRubric("Image")]
     [ViewImage(ViewImageMode.Regular, "30px", "30px")]
-    [FileRubric(FileRubricType.Property, "CompanyImageData")]
+    [FileRubric(FileRubricType.Property, "OrganizationImageData")]
     public string? OrganizationImage { get; set; }
 
     [VisibleRubric]

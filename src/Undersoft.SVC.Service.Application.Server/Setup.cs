@@ -43,42 +43,17 @@ public class Setup
                     typeof(AccessClient),
                     typeof(CatalogsClient),
                     typeof(InventoryClient),
-                    typeof(VaccinationClient)
+                    typeof(VaccinationClient),
                 }
             )
             .AddDataServer<ICenterStore>(
-                DataServerTypes.All,
-                builder =>
-                    builder
-                        .AddInvocations<Appointment>()
-                        .AddInvocations<Campaign>()
-                        .AddInvocations<Certificate>()
-                        .AddInvocations<Manufacturer>()
-                        .AddInvocations<Office>()
-                        .AddInvocations<PostSymptom>()
-                        .AddInvocations<Procedure>()
-                        .AddInvocations<Request>()
-                        .AddInvocations<Stock>()
-                        .AddInvocations<Traffic>()
-                        .AddInvocations<Vaccine>()
-                        .AddInvocations<Supplier>()
-                        .AddInvocations<Price>()
+                DataServerTypes.All          
             )
             .AddDataServer<IEventStore>(
-                DataServerTypes.All,
-                builder => builder.AddInvocations<EventInfo>()
+                DataServerTypes.All              
             )
             .AddDataServer<IAccountStore>(
-                DataServerTypes.All,
-                builder => builder.AddInvocations<Account>()
-                                  .AddInvocations<AccountAddress>()
-                                  .AddInvocations<AccountPersonal>()
-                                  .AddInvocations<AccountProfessional>()
-                                  .AddInvocations<AccountOrganization>()
-                                  .AddInvocations<AccountSubscription>()
-                                  .AddInvocations<AccountConsent>()
-                                  .AddInvocations<AccountTenant>()
-                                  .AddInvocations<AccountPayment>()
+                DataServerTypes.All          
             );
     }
 
@@ -90,7 +65,7 @@ public class Setup
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
         app.UseApplicationServerSetup(env)
-            .UseServiceApplication()
+            .UseServiceApplication(true)
             .UseInternalProvider()
             .UseDataMigrations()
             .UseServiceClients();

@@ -40,51 +40,20 @@ public class Setup
             )
             .AddAccessServer<AccountStore, Account>()
             .AddDataServer<IEntityStore>(
-                DataServerTypes.Rest | DataServerTypes.OData,
-                builder =>
-                    builder
-                        .AddInvocations<Appointment>()
-                        .AddInvocations<Campaign>()
-                        .AddInvocations<Certificate>()
-                        .AddInvocations<Manufacturer>()
-                        .AddInvocations<Office>()
-                        .AddInvocations<PostSymptom>()
-                        .AddInvocations<Procedure>()
-                        .AddInvocations<Request>()
-                        .AddInvocations<Stock>()
-                        .AddInvocations<Traffic>()
-                        .AddInvocations<Vaccine>()
-                        .AddInvocations<Supplier>()
+                DataServerTypes.Rest | DataServerTypes.OData
             )
             .AddDataServer<IEventStore>(
-                DataServerTypes.All,
-                builder => builder.AddInvocations<EventInfo>()
+                DataServerTypes.All
             )
             .AddDataServer<IAccountStore>(
-                DataServerTypes.All,
-                builder =>
-                    builder
-                        .AddInvocations<Account>()
-                        .AddInvocations<AccountAddress>()
-                        .AddInvocations<AccountPersonal>()
-                        .AddInvocations<AccountProfessional>()
-                        .AddInvocations<AccountOrganization>()
-                        .AddInvocations<AccountSubscription>()
-                        .AddInvocations<AccountConsent>()
-                        .AddInvocations<AccountTenant>()
-                        .AddInvocations<AccountPayment>()
+                DataServerTypes.All
             );
     }
 
-    /// <summary>
-    /// Configures the specified application.
-    /// </summary>
-    /// <param name="app">The application.</param>
-    /// <param name="env">The env.</param>
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
         app.UseServerSetup(env)
-            .UseServiceServer(["v1"])
+            .UseServiceServer(["v1"], true)
             .UseInternalProvider()
             .UseDataMigrations()
             .UseServiceClients();

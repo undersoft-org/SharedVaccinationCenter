@@ -22,10 +22,6 @@ using Undersoft.SVC.Service.Infrastructure.Stores;
 /// </summary>
 public class Setup
 {
-    /// <summary>
-    /// Configures the services.
-    /// </summary>
-    /// <param name="srvc">The srvc.</param>
     public void ConfigureServices(IServiceCollection srvc)
     {
         srvc.AddServerSetup()
@@ -44,35 +40,20 @@ public class Setup
                 }
             )
             .AddDataServer<IEntityStore>(
-                DataServerTypes.Rest | DataServerTypes.OData,
-                builder =>
-                    builder
-                        .AddInvocations<Campaign>()
-                        .AddInvocations<Manufacturer>()
-                        .AddInvocations<Office>()
-                        .AddInvocations<Vaccine>()
-                        .AddInvocations<Supplier>()
-                        .AddInvocations<Price>()
+                DataServerTypes.Rest | DataServerTypes.OData             
             )
             .AddDataServer<IEventStore>(
-                DataServerTypes.All,
-                builder => builder.AddInvocations<EventInfo>()
+                DataServerTypes.All
             )
             .AddDataServer<IAccountStore>(
-                DataServerTypes.All,
-                builder => builder.AddInvocations<Account>()
+                DataServerTypes.All
             );
     }
 
-    /// <summary>
-    /// Configures the specified application.
-    /// </summary>
-    /// <param name="app">The application.</param>
-    /// <param name="env">The env.</param>
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
         app.UseServerSetup(env)
-            .UseServiceServer(new string[] { "v1" })
+            .UseServiceServer(["v1"], true)
             .UseInternalProvider()
             .UseDataMigrations()
             .UseServiceClients();
