@@ -2,22 +2,19 @@
   "profiles": {
     "Undersoft.SVC.Service.Server.Inventory-Development": {
       "commandName": "Project",
-      "launchUrl": "swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "dotnetRunMessages": true,
-      "applicationUrl": "https://localhost:25225;http://localhost:26226"
+      "applicationUrl": "https://127.0.0.1:25225;http://127.0.0.1:26226"
     },
     "Undersoft.SVC.Service.Server.Inventory": {
       "commandName": "Project",
-      "launchUrl": "swagger",
       "dotnetRunMessages": true,
-      "applicationUrl": "https://localhost:25225;http://localhost:26226"
+      "applicationUrl": "https://127.0.0.1:25225;http://127.0.0.1:26226"
     },
     "IIS Express": {
       "commandName": "IISExpress",
-      "launchUrl": "swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -32,10 +29,9 @@
     },
     "WSL": {
       "commandName": "WSL2",
-      "launchUrl": "https://localhost:25225/swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "ASPNETCORE_URLS": "https://localhost:25225;http://localhost:26226"
+        "ASPNETCORE_URLS": "https://127.0.0.1:25225;http://127.0.0.1:26226"
       },
       "distributionName": ""
     }
@@ -45,7 +41,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:6768",
+      "applicationUrl": "http://127.0.0.1:6768",
       "sslPort": 44377
     }
   }

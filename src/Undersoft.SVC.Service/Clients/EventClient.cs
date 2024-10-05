@@ -15,7 +15,7 @@ namespace Undersoft.SVC.Service.Clients
     /// <summary>
     /// The event client.
     /// </summary>
-    public class EventClient : OpenDataClient<IEventStore>
+    public class EventClient : DataClient<IEventStore>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="EventClient"/> class.

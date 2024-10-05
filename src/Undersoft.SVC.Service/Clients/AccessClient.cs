@@ -15,7 +15,7 @@ namespace Undersoft.SVC.Service.Clients
     /// <summary>
     /// The access client.
     /// </summary>
-    public class AccessClient : OpenDataClient<IAccountStore>
+    public class AccessClient : DataClient<IAccountStore>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AccessClient"/> class.

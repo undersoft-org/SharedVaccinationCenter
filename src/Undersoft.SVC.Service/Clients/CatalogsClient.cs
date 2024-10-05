@@ -14,7 +14,7 @@ namespace Undersoft.SVC.Service.Clients
     /// <summary>
     /// The service client.
     /// </summary>
-    public class CatalogsClient : OpenDataClient<ICatalogsStore>
+    public class CatalogsClient : DataClient<ICatalogsStore>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ServiceClient"/> class.

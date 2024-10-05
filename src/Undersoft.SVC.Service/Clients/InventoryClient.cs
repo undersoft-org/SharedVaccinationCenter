@@ -15,7 +15,7 @@ namespace Undersoft.SVC.Service.Clients
     /// <summary>
     /// The service client.
     /// </summary>
-    public class InventoryClient : OpenDataClient<IInventoryStore>
+    public class InventoryClient : DataClient<IInventoryStore>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ServiceClient"/> class.
