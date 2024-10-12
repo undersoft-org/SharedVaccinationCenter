@@ -17,7 +17,7 @@ namespace Undersoft.SVC.Service.Server.Inventory.Controllers.Api;
 /// <summary>
 /// The accounts controller.
 /// </summary>
-[Route($"{StoreRoutes.ApiAuthRoute}/Account")]
+[Route($"api/auth/Account")]
 public class AccountsController
     : ApiDataRemoteController<
         long,

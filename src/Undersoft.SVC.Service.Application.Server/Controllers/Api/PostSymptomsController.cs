@@ -19,7 +19,7 @@ using Undersoft.SVC.Service.Contracts.Vaccination;
 /// <summary>
 /// The contact controller.
 /// </summary>
-[Route($"{StoreRoutes.ApiDataRoute}/PostSymptom")]
+[Route($"api/data/PostSymptom")]
 public class PostSymptomsController
     : ApiDataRemoteController<long, IVaccinationStore, PostSymptom, PostSymptom, ServiceManager>
 {

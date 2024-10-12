@@ -19,7 +19,7 @@ namespace Undersoft.SVC.Service.Server.Vaccination.Controllers.Api
     /// The contact controller.
     /// </summary>
     [Authorize]
-    [Route($"{StoreRoutes.ApiDataRoute}/Appointment")]
+    [Route($"api/data/Appointment")]
     public class AppointmentsController
         : ApiCqrsController<
             long,

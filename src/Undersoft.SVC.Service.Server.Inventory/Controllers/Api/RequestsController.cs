@@ -17,7 +17,7 @@ namespace Undersoft.SVC.Service.Server.Inventory.Controllers.Api
     /// <summary>
     /// The contact controller.
     /// </summary>
-    [Route($"{StoreRoutes.ApiDataRoute}/Request")]
+    [Route($"api/data/Request")]
     public class RequestsController
         : ApiCqrsController<
             long,

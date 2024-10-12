@@ -17,7 +17,7 @@ namespace Undersoft.SVC.Service.Server.Controllers.Api
     /// <summary>
     /// The contact controller.
     /// </summary>
-    [Route($"{StoreRoutes.ApiDataRoute}/Campaign")]
+    [Route($"api/data/Campaign")]
     public class CampaignsController
         : ApiCqrsController<
             long,

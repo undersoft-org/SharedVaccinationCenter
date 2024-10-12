@@ -17,7 +17,7 @@ namespace Undersoft.SVC.Service.Server.Controllers.Api
     /// <summary>
     /// The contact controller.
     /// </summary>
-    [Route($"{StoreRoutes.ApiDataRoute}/Certificate")]
+    [Route($"api/data/Certificate")]
     public class CertificatesController
         : ApiCqrsController<
             long,

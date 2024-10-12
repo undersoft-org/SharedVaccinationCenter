@@ -18,7 +18,7 @@ namespace Undersoft.SVC.Service.Application.Server.Controllers.Api;
 /// <summary>
 /// The events controller.
 /// </summary>
-[Route($"{StoreRoutes.ApiEventRoute}/Event")]
+[Route($"api/Event")]
 public class EventsController : ApiEventController<long, IEventStore, Event, Event>
 {
     /// <summary>

@@ -19,7 +19,7 @@ using Undersoft.SVC.Service.Contracts.Catalogs;
 /// <summary>
 /// The contact controller.
 /// </summary>
-[Route($"{StoreRoutes.ApiDataRoute}/Manufacturer")]
+[Route($"api/data/Manufacturer")]
 public class ManufacturersController
     : ApiDataRemoteController<long, IDataStore, Manufacturer, Manufacturer, ServiceManager>
 {

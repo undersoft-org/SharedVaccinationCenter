@@ -18,7 +18,7 @@ using Undersoft.SVC.Service.Contracts.Catalogs;
 /// <summary>
 /// The contact controller.
 /// </summary>
-[Route($"{StoreRoutes.ApiDataRoute}/Office")]
+[Route($"api/data/Office")]
 public class OfficesController
     : ApiDataRemoteController<long, IDataStore, Office, Office, ServiceManager>
 {

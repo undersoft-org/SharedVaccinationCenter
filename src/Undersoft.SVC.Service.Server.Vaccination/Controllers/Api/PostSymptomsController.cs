@@ -17,7 +17,7 @@ namespace Undersoft.SVC.Service.Server.Vaccination.Controllers.Api
     /// <summary>
     /// The contact controller.
     /// </summary>
-    [Route($"{StoreRoutes.ApiDataRoute}/PostSymptom")]
+    [Route($"api/data/PostSymptom")]
     public class PostSymptomsController
         : ApiCqrsController<
             long,

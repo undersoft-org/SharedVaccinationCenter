@@ -21,7 +21,7 @@ using Undersoft.SVC.Service.Contracts.Vaccination;
 /// The contact controller.
 /// </summary>
 [Authorize]
-[Route($"{StoreRoutes.ApiDataRoute}/Certificate")]
+[Route($"api/data/Certificate")]
 public class CertificatesController
     : ApiDataRemoteController<long, IVaccinationStore, Certificate, Certificate, ServiceManager>
 {

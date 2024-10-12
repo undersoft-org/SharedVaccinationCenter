@@ -20,7 +20,7 @@ using Undersoft.SVC.Service.Contracts.Inventory;
 /// <summary>
 /// The contact controller.
 /// </summary>
-[Route($"{StoreRoutes.ApiDataRoute}/Stock")]
+[Route($"api/data/Stock")]
 public class StocksController
     : ApiDataRemoteController<long, IInventoryStore, Stock, Stock, ServiceManager>
 {

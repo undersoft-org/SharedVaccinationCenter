@@ -22,7 +22,7 @@ using Undersoft.SVC.Service.Contracts.Catalogs;
 /// The contact controller.
 /// </summary>
 [Authorize]
-[Route($"{StoreRoutes.ApiDataRoute}/Manufacturer")]
+[Route($"api/data/Manufacturer")]
 public class ManufacturersController
      : ApiDataRemoteController<long, ICatalogsStore, Manufacturer,
         Manufacturer,

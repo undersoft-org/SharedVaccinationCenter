@@ -19,7 +19,7 @@ using Undersoft.SVC.Service.Contracts.Vaccination;
 /// <summary>
 /// The contact controller.
 /// </summary>
-[Route($"{StoreRoutes.ApiDataRoute}/Procedure")]
+[Route($"api/data/Procedure")]
 public class ProceduresController
     : ApiDataRemoteController<long, IVaccinationStore, Procedure, Procedure, ServiceManager>
 {

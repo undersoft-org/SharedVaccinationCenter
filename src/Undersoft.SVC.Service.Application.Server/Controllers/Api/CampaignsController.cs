@@ -21,7 +21,7 @@ using Undersoft.SVC.Service.Contracts.Catalogs;
 /// The contact controller.
 /// </summary>
 [Authorize]
-[Route($"{StoreRoutes.ApiDataRoute}/Campaign")]
+[Route($"api/data/Campaign")]
 public class CampaignsController
     : ApiDataRemoteController<long, ICatalogsStore, Campaign, Campaign, ServiceManager>
 {
