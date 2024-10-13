@@ -19,6 +19,6 @@ namespace Undersoft.SVC.Domain.Entities.Catalogs
 
         public string? Name { get; set; }
 
-        public virtual EntitySet<Appointment>? Appointments { get; set; }
+        public virtual Listing<Appointment>? Appointments { get; set; }
     }
 }

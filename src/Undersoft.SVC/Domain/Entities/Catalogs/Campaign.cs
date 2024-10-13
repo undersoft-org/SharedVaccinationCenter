@@ -18,9 +18,9 @@ namespace Undersoft.SVC.Domain.Entities.Catalogs
 
         public virtual Price? Price { get; set; }
 
-        public virtual EntitySet<Vaccine>? Vaccines { get; set; }
+        public virtual Listing<Vaccine>? Vaccines { get; set; }
 
-        public virtual EntitySet<Appointment>? Appointments { get; set; }
+        public virtual Listing<Appointment>? Appointments { get; set; }
     }
 
 }

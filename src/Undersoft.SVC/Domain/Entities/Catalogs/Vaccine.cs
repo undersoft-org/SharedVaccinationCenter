@@ -31,13 +31,13 @@ namespace Undersoft.SVC.Domain.Entities.Catalogs
 
         public virtual Stock? Stock { get; set; }
 
-        public virtual EntitySet<Campaign>? Campaigns { get; set; }
+        public virtual Listing<Campaign>? Campaigns { get; set; }
 
-        public virtual EntitySet<Procedure>? Procedures { get; set; }
+        public virtual Listing<Procedure>? Procedures { get; set; }
 
-        public virtual EntitySet<Certificate>? Certificates { get; set; }
+        public virtual Listing<Certificate>? Certificates { get; set; }
 
-        public virtual EntitySet<PostSymptom>? PostSymptoms { get; set; }
+        public virtual Listing<PostSymptom>? PostSymptoms { get; set; }
     }
 
 }

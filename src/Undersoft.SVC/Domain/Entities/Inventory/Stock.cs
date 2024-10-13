@@ -20,9 +20,9 @@ namespace Undersoft.SVC.Domain.Entities.Inventory
 
         public virtual float? Amount { get; set; }
 
-        public virtual EntitySet<Traffic>? Traffics { get; set; }
+        public virtual Listing<Traffic>? Traffics { get; set; }
 
-        public virtual EntitySet<Request>? Requests { get; set; }
+        public virtual Listing<Request>? Requests { get; set; }
     }
 
 }
