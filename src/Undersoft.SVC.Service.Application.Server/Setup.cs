@@ -9,10 +9,10 @@
 using Undersoft.SDK.Service.Application.Server;
 using Undersoft.SDK.Service.Application.Server.Hosting;
 using Undersoft.SDK.Service.Data.Store;
-using Undersoft.SDK.Service.Server;
 
 namespace Undersoft.SVC.Service.Application.Server;
 
+using Undersoft.SDK.Service.Server.Builders;
 using Undersoft.SVC.Service.Clients.Abstractions;
 
 public class Setup
@@ -20,16 +20,16 @@ public class Setup
     public void ConfigureServices(IServiceCollection srvc)
     {
         srvc.AddApplicationServerSetup()
-            .ConfigureApplicationServer()
-            .AddDataServer<ICenterStore>(DataServerTypes.All)
-            .AddDataServer<IEventStore>(DataServerTypes.All)
-            .AddDataServer<IAccountStore>(DataServerTypes.All);
+            .ConfigureApplicationServer(true)
+            .AddDataServer<ICenterStore>(DataServiceTypes.All)
+            .AddDataServer<IEventStore>(DataServiceTypes.All)
+            .AddDataServer<IAccountStore>(DataServiceTypes.All);
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
         app.UseApplicationServerSetup(env)
-            .UseServiceApplication()
+            .UseServiceApplication(true, ["v1"])
             .UseInternalProvider()
             .UseDataMigrations()
             .UseServiceClients();
