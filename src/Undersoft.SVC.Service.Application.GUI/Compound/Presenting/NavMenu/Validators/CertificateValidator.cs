@@ -22,7 +22,7 @@ public class CertificateValidator : ViewValidator<Certificate>
     public CertificateValidator(IServicer servicer) : base(servicer)
     {
         ValidationScope(
-            OperationType.Any,
+            OperationKind.Any,
             () =>
             {
                 ValidateRequired(p => p.Model.Personal!.FirstName);

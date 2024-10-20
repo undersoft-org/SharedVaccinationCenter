@@ -26,7 +26,7 @@ public class StockValidator : ViewValidator<Stock>
     public StockValidator(IServicer servicer) : base(servicer)
     {
         ValidationScope(
-            OperationType.Any,
+            OperationKind.Any,
             () =>
             {
                 ValidateRequired(p => p.Model.Amount);

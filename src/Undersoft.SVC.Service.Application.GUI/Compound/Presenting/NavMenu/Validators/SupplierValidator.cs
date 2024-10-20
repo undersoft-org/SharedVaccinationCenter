@@ -19,7 +19,7 @@ public class SupplierValidator : ViewValidator<Supplier>
     public SupplierValidator(IServicer servicer) : base(servicer)
     {
         ValidationScope(
-            OperationType.Any,
+            OperationKind.Any,
             () =>
             {
                 ValidateRequired(p => p.Model.Organization!.OrganizationFullName);

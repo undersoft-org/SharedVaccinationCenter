@@ -26,7 +26,7 @@ public class TrafficValidator : ViewValidator<Traffic>
     public TrafficValidator(IServicer servicer) : base(servicer)
     {
         ValidationScope(
-            OperationType.Any,
+            OperationKind.Any,
             () =>
             {
                 ValidateRequired(p => p.Model.Quantity);

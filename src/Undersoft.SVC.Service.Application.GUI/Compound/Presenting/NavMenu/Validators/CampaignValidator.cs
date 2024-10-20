@@ -23,7 +23,7 @@ public class CampaignValidator : ViewValidator<Campaign>
     public CampaignValidator(IServicer servicer) : base(servicer)
     {
         ValidationScope(
-            OperationType.Any,
+            OperationKind.Any,
             () =>
             {
                 ValidateRequired(p => p.Model.Name);

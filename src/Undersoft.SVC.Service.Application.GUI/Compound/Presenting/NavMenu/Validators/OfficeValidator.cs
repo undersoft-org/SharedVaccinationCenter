@@ -26,7 +26,7 @@ public class OfficeValidator : ViewValidator<Office>
     public OfficeValidator(IServicer servicer) : base(servicer)
     {
         ValidationScope(
-            OperationType.Any,
+            OperationKind.Any,
             () =>
             {
                 ValidateRequired(p => p.Model.Name!);

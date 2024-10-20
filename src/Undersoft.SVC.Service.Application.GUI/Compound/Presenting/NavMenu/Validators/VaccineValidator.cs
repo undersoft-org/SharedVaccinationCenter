@@ -26,7 +26,7 @@ public class VaccineValidator : ViewValidator<Vaccine>
     public VaccineValidator(IServicer servicer) : base(servicer)
     {
         ValidationScope(
-            OperationType.Any,
+            OperationKind.Any,
             () =>
             {
                 ValidateRequired(p => p.Model.Specification!.Name);

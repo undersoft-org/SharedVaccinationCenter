@@ -16,21 +16,12 @@ namespace Undersoft.SVC.Service.Application.Server;
 /// </summary>
 public class Program
 {
-    /// <summary>
-    /// The server.
-    /// </summary>
     static IApplicationServerHost? server;
-    /// <summary>
-    /// Defines the entry point of the application.
-    /// </summary>
-    /// <param name="args">The arguments.</param>
+
     public static void Main(string[] args)
     {
         Launch();
     }
-    /// <summary>
-    /// Launches this instance.
-    /// </summary>
     public static void Launch()
     {
         try

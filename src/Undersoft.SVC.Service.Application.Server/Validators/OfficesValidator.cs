@@ -26,7 +26,7 @@ public class OfficesValidator : RemoteCommandSetValidator<Office>
     public OfficesValidator(IServicer servicer) : base(servicer)
     {
         ValidationScope(
-            OperationType.Any,
+            OperationKind.Any,
             () =>
             {
                 ValidateRequired(p => p.Model.Name);

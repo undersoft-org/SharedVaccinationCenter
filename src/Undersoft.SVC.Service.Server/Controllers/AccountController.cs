@@ -23,6 +23,6 @@ namespace Undersoft.SVC.Service.Server.Controllers
             AccountService<Contracts.Account>
         >
     {
-        public AccountController(IServicer servicer) : base(servicer, EventPublishMode.None) { }
+        public AccountController(IServicer servicer) : base(servicer, PublishMode.None) { }
     }
 }

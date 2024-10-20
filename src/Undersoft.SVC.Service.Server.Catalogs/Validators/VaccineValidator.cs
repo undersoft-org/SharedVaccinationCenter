@@ -25,7 +25,7 @@ namespace Undersoft.SVC.Service.Application.Server.Validators
         public VaccineValidator(IServicer servicer) : base(servicer)
         {
             ValidationScope(
-                OperationType.Any,
+                OperationKind.Any,
                 () =>
                 {
                     ValidateRequired(p => p.Model.Specification!.Name);

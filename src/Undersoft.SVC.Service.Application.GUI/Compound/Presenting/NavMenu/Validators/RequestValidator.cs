@@ -26,7 +26,7 @@ public class RequestValidator : ViewValidator<Request>
     public RequestValidator(IServicer servicer) : base(servicer)
     {
         ValidationScope(
-            OperationType.Any,
+            OperationKind.Any,
             () =>
             {
                 ValidateRequired(p => p.Model.Quentity);

@@ -26,7 +26,7 @@ public class ProcedureValidator : ViewValidator<Procedure>
     public ProcedureValidator(IServicer servicer) : base(servicer)
     {
         ValidationScope(
-            OperationType.Any,
+            OperationKind.Any,
             () =>
             {
                 ValidateRequired(p => p.Model.Term!.Dose);

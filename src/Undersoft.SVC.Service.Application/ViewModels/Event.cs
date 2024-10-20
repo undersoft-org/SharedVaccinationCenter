@@ -46,5 +46,5 @@ public class Event : DataObject, IViewModel
     [VisibleRubric]
     [RubricSize(4)]
     [DisplayRubric("Status")]
-    public virtual EventPublishStatus PublishStatus { get; set; }
+    public virtual PublishStatus PublishStatus { get; set; }
 }

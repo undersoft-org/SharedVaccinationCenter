@@ -25,7 +25,7 @@ public class AppointmentValidator : RemoteCommandValidator<Appointment>
     public AppointmentValidator(IServicer servicer) : base(servicer)
     {
         ValidationScope(
-            OperationType.Any,
+            OperationKind.Any,
             () =>
             {
                 ValidateEmail(p => p.Model.Personal!.Email);

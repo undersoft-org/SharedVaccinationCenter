@@ -26,7 +26,7 @@ public class VaccinesValidator : RemoteCommandSetValidator<Vaccine>
     public VaccinesValidator(IServicer servicer) : base(servicer)
     {
         ValidationScope(
-            OperationType.Any,
+            OperationKind.Any,
             () =>
             {
                 ValidateRequired(p => p.Model.Specification!.Name);

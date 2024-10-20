@@ -26,7 +26,7 @@ public class ManufacturersValidator : RemoteCommandSetValidator<Manufacturer>
     public ManufacturersValidator(IServicer servicer) : base(servicer)
     {
         ValidationScope(
-            OperationType.Any,
+            OperationKind.Any,
             () =>
             {
                 ValidateRequired(p => p.Model.Name);

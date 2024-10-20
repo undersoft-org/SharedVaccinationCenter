@@ -26,7 +26,7 @@ public class AppointmentValidator : ViewValidator<Appointment>
     public AppointmentValidator(IServicer servicer) : base(servicer)
     {
         ValidationScope(
-            OperationType.Any,
+            OperationKind.Any,
             () =>
             {
                 ValidateEmail(p => p.Model.Personal!.Email);
