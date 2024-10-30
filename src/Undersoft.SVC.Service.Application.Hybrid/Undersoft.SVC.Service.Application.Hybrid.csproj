@@ -51,6 +51,10 @@
     <MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
   </ItemGroup>
 
+  <PropertyGroup Condition="$(TargetFramework.Contains('-windows'))">
+    <AppxPackage>false</AppxPackage>
+    <PublishAppxPackage>false</PublishAppxPackage>
+  </PropertyGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="appsettings.android.json">
@@ -62,10 +66,10 @@
   </ItemGroup>
 
   <ItemGroup> 
-    <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.7" />
-    <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.7" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="8.0.7" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />
+    <PackageReference Include="Microsoft.Maui.Controls" Version="8.*-*" />
+    <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.*-*" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="8.*-*" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.*-*" />
   </ItemGroup>
 
   <ItemGroup>
