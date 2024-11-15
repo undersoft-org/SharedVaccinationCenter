@@ -25,7 +25,7 @@ using Undersoft.SDK.Service.Data.Store;
 
 namespace Undersoft.SVC.Service.Application.Hybrid;
 
-using Undersoft.SVC.Service.Application.GUI.Compound.Access;
+using Undersoft.SDK.Service.Application.GUI.View.Accounts;
 using Undersoft.SVC.Service.Application.GUI.Compound.Presenting.NavMenu.Validators;
 using Undersoft.SVC.Service.Clients;
 using Undersoft.SVC.Service.Contracts;
@@ -179,7 +179,7 @@ public static class MauiProgram
                         sp.GetRequiredService<AccessProvider<Account>>()
                     )
                     .AddScoped<IValidator<IViewData<Credentials>>, AccessValidator>()
-                    .AddScoped<IValidator<IViewData<Account>>, AccountValidator>()
+                    .AddScoped<IValidator<IViewData<Account>>, AccountValidator<Account>>()
                     .AddScoped<IValidator<IViewData<ViewModels.Event>>, EventValidator>()
                     .AddScoped<
                         IValidator<IViewData<ViewModels.Vaccination.Appointment>>,

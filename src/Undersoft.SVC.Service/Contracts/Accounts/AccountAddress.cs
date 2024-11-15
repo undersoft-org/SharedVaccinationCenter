@@ -11,7 +11,7 @@ using Undersoft.SDK.Service.Operation;
 
 namespace Undersoft.SVC.Service.Contracts.Accounts
 {
-    [Validator("AccountAddressValidator")]
+    [Validator("AccountAddressValidator", typeof(AccountAddress))]
     public class AccountAddress : SDK.Service.Access.Identity.Address, IContract
     {
         public virtual long? AccountId { get; set; }

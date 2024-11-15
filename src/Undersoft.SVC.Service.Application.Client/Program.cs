@@ -23,8 +23,8 @@ using Undersoft.SDK.Service.Data.Store;
 namespace Undersoft.SVC.Service.Application.Client;
 
 using Undersoft.SDK.Service.Application.GUI;
+using Undersoft.SDK.Service.Application.GUI.View.Accounts;
 using Undersoft.SDK.Service.Data.Event;
-using Undersoft.SVC.Service.Application.GUI.Compound.Access;
 using Undersoft.SVC.Service.Application.GUI.Compound.Presenting.NavMenu.Validators;
 using Undersoft.SVC.Service.Application.ViewModels.Catalogs;
 using Undersoft.SVC.Service.Application.ViewModels.Inventory;
@@ -88,9 +88,9 @@ public class Program
                         sp.GetRequiredService<AccessProvider<Account>>()
                     )
                     .AddScoped<IValidator<IViewData<Credentials>>, AccessValidator>()
-                    .AddScoped<IValidator<IViewData<Account>>, AccountValidator>()
-                    .AddScoped<IValidator<IViewData<AccountAddress>>, AccountAddressValidator>()
-                    .AddScoped<IValidator<IViewData<AccountPersonal>>, AccountPersonalValidator>()
+                    .AddScoped<IValidator<IViewData<Account>>, AccountValidator<Account>>()
+                    .AddScoped<IValidator<IViewData<AccountAddress>>, AccountAddressValidator<AccountAddress>>()
+                    .AddScoped<IValidator<IViewData<AccountPersonal>>, AccountPersonalValidator<AccountPersonal>>()
                     .AddScoped<IValidator<IViewData<ViewModels.Event>>, EventValidator>()
                     .AddScoped<
                         IValidator<IViewData<Appointment>>,

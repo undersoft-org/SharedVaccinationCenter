@@ -14,7 +14,7 @@ namespace Undersoft.SVC.Service.Contracts
     using Undersoft.SDK.Service.Access.Identity;
     using Undersoft.SVC.Service.Contracts.Accounts;
 
-    [Validator("AccountValidator")]
+    [Validator("AccountValidator", typeof(Account))]
     [ViewSize("380px", "650px")]
     [StructLayout(LayoutKind.Sequential)]
     public class Account : Authorization, IContract

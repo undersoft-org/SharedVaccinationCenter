@@ -7,9 +7,11 @@
 // *************************************************
 
 using Undersoft.SDK.Service.Data.Contract;
+using Undersoft.SDK.Service.Operation;
 
 namespace Undersoft.SVC.Service.Contracts.Accounts
 {
+    [Validator("AccountPaymentValidator", typeof(AccountPayment))]
     public class AccountPayment : SDK.Service.Access.Licensing.Payment, IContract
     {
     }

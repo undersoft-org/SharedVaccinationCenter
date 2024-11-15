@@ -7,9 +7,11 @@
 // *************************************************
 
 using Undersoft.SDK.Service.Data.Contract;
+using Undersoft.SDK.Service.Operation;
 
 namespace Undersoft.SVC.Service.Contracts.Accounts
 {
+    [Validator("AccountProfessionalValidator", typeof(AccountProfessional))]
     public class AccountProfessional : SDK.Service.Access.Identity.Professional, IContract
     {
     }

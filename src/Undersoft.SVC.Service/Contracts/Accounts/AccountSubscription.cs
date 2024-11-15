@@ -8,9 +8,11 @@
 
 using Undersoft.SDK.Service.Access.Licensing;
 using Undersoft.SDK.Service.Data.Contract;
+using Undersoft.SDK.Service.Operation;
 
 namespace Undersoft.SVC.Service.Contracts.Accounts
 {
+    [Validator("AccountSubscriptionValidator", typeof(AccountSubscription))]
     public class AccountSubscription : Subscription, IContract
     {
     }

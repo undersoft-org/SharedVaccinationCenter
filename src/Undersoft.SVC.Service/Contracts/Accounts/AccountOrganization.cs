@@ -7,9 +7,11 @@
 // *************************************************
 
 using Undersoft.SDK.Service.Data.Contract;
+using Undersoft.SDK.Service.Operation;
 
 namespace Undersoft.SVC.Service.Contracts.Accounts
 {
+    [Validator("AccountOrganizationValidator", typeof(AccountOrganization))]
     public class AccountOrganization : SDK.Service.Access.Identity.Organization, IContract
     {
     }
